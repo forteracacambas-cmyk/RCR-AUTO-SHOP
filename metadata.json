@@ -1,0 +1,6 @@
+{
+  "name": "RCR AUTO SHOP - Consulta de Motores Automotivos",
+  "description": "Portal oficial de consulta de disponibilidade, compatibilidade e orçamento de motores automotivos da RCR AUTO SHOP LTDA.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
