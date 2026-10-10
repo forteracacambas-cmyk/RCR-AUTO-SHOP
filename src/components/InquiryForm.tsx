@@ -43,10 +43,6 @@ export const InquiryForm: React.FC = () => {
   const [copied, setCopied] = useState<boolean>(false);
   const [hasGenerated, setHasGenerated] = useState<boolean>(false);
 
-  const quickBrands = [
-    'Volkswagen', 'Fiat', 'Chevrolet', 'Ford', 'Toyota', 
-    'Honda', 'Hyundai', 'Renault', 'Nissan', 'Jeep'
-  ];
 
   const quickDisplacements = [
     '1.0', '1.4', '1.6', '1.8', '2.0', 'Diesel Turbo'
@@ -202,7 +198,7 @@ export const InquiryForm: React.FC = () => {
                     setForm({ ...form, brand: e.target.value });
                     if (errors.brand) setErrors({ ...errors, brand: undefined });
                   }}
-                  placeholder="Ex.: Fiat, Volkswagen, Chevrolet, Toyota..."
+                  placeholder="Informe a marca do seu veículo"
                   className={`w-full px-3.5 py-2.5 text-sm bg-white rounded-md border text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:ring-2 transition-colors ${
                     errors.brand
                       ? 'border-red-500 focus:ring-red-400'
@@ -217,22 +213,7 @@ export const InquiryForm: React.FC = () => {
                   </p>
                 )}
 
-                <div className="mt-2.5 flex flex-wrap gap-1.5 items-center">
-                  <span className="text-[11px] text-neutral-500 font-medium mr-1">Exemplos:</span>
-                  {quickBrands.slice(0, 6).map((b) => (
-                    <button
-                      type="button"
-                      key={b}
-                      onClick={() => {
-                        setForm({ ...form, brand: b });
-                        if (errors.brand) setErrors({ ...errors, brand: undefined });
-                      }}
-                      className="text-xs px-2 py-1 bg-white hover:bg-orange-50 hover:text-orange-700 hover:border-orange-300 border border-neutral-200 rounded text-neutral-700 transition-colors cursor-pointer"
-                    >
-                      {b}
-                    </button>
-                  ))}
-                </div>
+
               </div>
 
               {/* Field: Modelo */}
@@ -249,7 +230,7 @@ export const InquiryForm: React.FC = () => {
                     setForm({ ...form, model: e.target.value });
                     if (errors.model) setErrors({ ...errors, model: undefined });
                   }}
-                  placeholder="Ex.: Gol G5, Corolla XEi, Onix LT, Palio Fire..."
+                  placeholder="Informe o modelo e a versão"
                   className={`w-full px-3.5 py-2.5 text-sm bg-white rounded-md border text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:ring-2 transition-colors ${
                     errors.model
                       ? 'border-red-500 focus:ring-red-400'
@@ -430,7 +411,7 @@ export const InquiryForm: React.FC = () => {
 
               {/* Link discreto de privacidade */}
               <div className="pt-2 text-xs text-neutral-500">
-                Seus dados são tratados com segurança. Veja nossa{' '}
+                A consulta é preparada no seu navegador. Veja nossa{' '}
                 <a href="/privacidade" className="text-orange-600 hover:underline">
                   Política de Privacidade
                 </a>
@@ -464,6 +445,7 @@ export const InquiryForm: React.FC = () => {
                   </p>
                   <textarea
                     id="mensagem-gerada-textarea"
+                    aria-label="Mensagem da consulta"
                     rows={8}
                     value={generatedMessage}
                     onChange={(e) => setGeneratedMessage(e.target.value)}
