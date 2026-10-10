@@ -1,4 +1,5 @@
 import React from 'react';
+import engineDetail from '../../engine-detail.webp';
 import { Building2, ArrowRight } from 'lucide-react';
 import { businessConfig } from '../config/businessConfig';
 import { PageRoute } from '../types';
@@ -32,6 +33,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onScrollToForm
       <section className="py-16 sm:py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="space-y-10">
+          <figure className="overflow-hidden rounded-xl border border-neutral-200 bg-neutral-950">
+            <img src={engineDetail} alt="Ilustração de bloco de motor com pistões" width="1400" height="933" loading="lazy" className="w-full max-h-96 object-cover" />
+            <figcaption className="px-5 py-3 text-xs text-neutral-400">Imagem ilustrativa de componentes de um motor.</figcaption>
+          </figure>
           
           {/* Apresentação comercial simples */}
           <div>
@@ -107,3 +112,4 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onScrollToForm
     </div>
   );
 };
+
