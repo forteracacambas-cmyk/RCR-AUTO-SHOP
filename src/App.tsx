@@ -80,8 +80,8 @@ export default function App() {
         {currentRoute === '/' && (
           <>
             <Hero onScrollToForm={scrollToForm} />
-            <ThreeSteps onScrollToForm={scrollToForm} />
             <InquiryForm />
+            <ThreeSteps onScrollToForm={scrollToForm} />
 
             {/* Nova Seção: Disponibilidade e Condição dos Motores */}
             <StockAndCondition />
