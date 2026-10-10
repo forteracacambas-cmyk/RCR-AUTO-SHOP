@@ -14,7 +14,7 @@ const engines = [
 ];
 
 export const InquiryForm: React.FC = () => {
-  const currentYear = new Date().getFullYear();
+  const currentYear = Math.max(2027, new Date().getFullYear() + 1);
   const years = Array.from({ length: currentYear - 1989 }, (_, i) => String(currentYear - i));
 
   const [engine, setEngine] = useState('');
