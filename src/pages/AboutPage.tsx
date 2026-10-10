@@ -1,6 +1,6 @@
 import React from 'react';
 import engineDetail from '../../engine-detail.webp';
-import { Building2, ArrowRight } from 'lucide-react';
+import { Building2, ArrowRight, ShieldCheck, FileText, CheckCircle } from 'lucide-react';
 import { businessConfig } from '../config/businessConfig';
 import { PageRoute } from '../types';
 
@@ -23,7 +23,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onScrollToForm
               Sobre a RCR AUTO SHOP
             </h1>
             <p className="mt-4 text-base sm:text-lg text-neutral-300 leading-relaxed">
-              Atendimento focado em consulta de motores automotivos, com envio de fotos e orçamento pelo WhatsApp.
+              Atendimento especializado para consulta de motores automotivos. Motores usados com procedência, nota fiscal e garantia.
             </p>
           </div>
         </div>
@@ -44,11 +44,44 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onScrollToForm
               Nossa Atuação
             </h2>
             <p className="text-neutral-700 leading-relaxed text-base">
-              A <strong>RCR AUTO SHOP LTDA</strong> atua no comércio e fornecimento de motores automotivos. Nosso objetivo é ajudar proprietários e profissionais da mecânica a encontrar a opção ideal para cada veículo.
+              A <strong>RCR AUTO SHOP</strong> atua com atendimento especializado para consulta de motores automotivos. Comercializamos motores usados com procedência, nota fiscal e garantia. Estoque sujeito à disponibilidade.
             </p>
             <p className="mt-3 text-neutral-700 leading-relaxed text-base">
-              Nossa equipe consulta a disponibilidade e envia fotos e orçamento quando houver uma opção para seu veículo. A condição e os detalhes do motor serão informados na proposta.
+              O processo é realizado de acordo com as informações do veículo e a disponibilidade existente no momento do atendimento. Nosso objetivo é fornecer informações claras para que o cliente possa avaliar a opção encontrada antes da conclusão da negociação.
             </p>
+          </div>
+
+          {/* Destaques operacionais confirmados */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="p-5 rounded-lg bg-neutral-50 border border-neutral-200">
+              <div className="flex items-center gap-2 font-bold text-neutral-900 mb-1 text-sm">
+                <CheckCircle className="w-4 h-4 text-orange-600" />
+                <span>Com Procedência</span>
+              </div>
+              <p className="text-xs text-neutral-600 leading-relaxed">
+                Motores com identificação conferida pela equipe antes da conclusão do negócio.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-lg bg-neutral-50 border border-neutral-200">
+              <div className="flex items-center gap-2 font-bold text-neutral-900 mb-1 text-sm">
+                <FileText className="w-4 h-4 text-orange-600" />
+                <span>Nota Fiscal</span>
+              </div>
+              <p className="text-xs text-neutral-600 leading-relaxed">
+                Comercialização regular com emissão de nota fiscal para cada unidade fornecida.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-lg bg-neutral-50 border border-neutral-200">
+              <div className="flex items-center gap-2 font-bold text-neutral-900 mb-1 text-sm">
+                <ShieldCheck className="w-4 h-4 text-orange-600" />
+                <span>Com Garantia</span>
+              </div>
+              <p className="text-xs text-neutral-600 leading-relaxed">
+                Prazo, cobertura e condições aplicáveis à unidade informados previamente pela equipe.
+              </p>
+            </div>
           </div>
 
           {/* Dados da Empresa */}
@@ -112,4 +145,3 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onScrollToForm
     </div>
   );
 };
-

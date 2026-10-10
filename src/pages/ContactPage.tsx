@@ -1,5 +1,5 @@
 import React from 'react';
-import { Building2, MapPin, Clock, MessageSquare } from 'lucide-react';
+import { Building2, MapPin, Clock, MessageSquare, ShieldCheck } from 'lucide-react';
 import { businessConfig } from '../config/businessConfig';
 import { PageRoute } from '../types';
 import { InquiryForm } from '../components/InquiryForm';
@@ -23,7 +23,7 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
               Contato
             </h1>
             <p className="mt-4 text-base sm:text-lg text-neutral-300 leading-relaxed">
-              Fale com a equipe pelo WhatsApp ou preencha o formulário para consultar o motor desejado.
+              Fale com a equipe pelo WhatsApp ou preencha o formulário para consultar a disponibilidade do motor desejado.
             </p>
           </div>
         </div>
@@ -38,23 +38,41 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
           <div className="lg:col-span-5 space-y-6">
             
             {/* WhatsApp Status */}
-            <div className="bg-neutral-900 text-white p-6 rounded-lg border border-neutral-800">
-              <div className="text-xs font-mono uppercase tracking-wider text-orange-400 mb-3 flex items-center gap-1.5">
+            <div className="bg-neutral-900 text-white p-6 rounded-xl border border-neutral-800 space-y-3">
+              <div className="text-xs font-mono uppercase tracking-wider text-orange-400 flex items-center gap-1.5">
                 <Clock className="w-3.5 h-3.5" />
-                <span>Atendimento</span>
+                <span>Atendimento Comercial</span>
               </div>
-              <h2 className="text-lg font-bold text-white mb-2">
+              <h2 className="text-lg font-bold text-white">
                 Atendimento pelo WhatsApp
               </h2>
               <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed">
-                Informe seu veículo para consultar disponibilidade, fotos e orçamento.
+                Informe o seu veículo para consultar disponibilidade, fotos e orçamento de motores usados com procedência, nota fiscal e garantia.
               </p>
+              
+              <div className="pt-2">
+                <a 
+                  href={`https://wa.me/${businessConfig.whatsappNumber}?text=${encodeURIComponent('Olá! Gostaria de consultar a disponibilidade de um motor.')}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="inline-flex items-center justify-center gap-2 w-full rounded-lg bg-emerald-600 hover:bg-emerald-500 py-3.5 px-4 font-semibold text-white transition-colors shadow-sm"
+                >
+                  <MessageSquare className="w-4 h-4" />
+                  <span>Falar no WhatsApp · (47) 9185-8962</span>
+                </a>
+              </div>
             </div>
 
-            <a href={`https://wa.me/${businessConfig.whatsappNumber}?text=${encodeURIComponent('Olá! Gostaria de consultar a disponibilidade de um motor.')}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-md bg-emerald-700 hover:bg-emerald-600 px-5 py-3 font-semibold text-white focus-visible:outline-2 focus-visible:outline-emerald-500">Falar no WhatsApp · (47) 9185-8962</a>
+            {/* Aviso Operacional */}
+            <div className="p-4 rounded-xl bg-orange-50 border border-orange-200 text-xs text-orange-950 leading-relaxed flex items-start gap-2.5">
+              <ShieldCheck className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
+              <span>
+                Comercializamos exclusivamente motores usados com procedência, nota fiscal e garantia. Disponibilidade sujeita ao estoque no momento da consulta.
+              </span>
+            </div>
 
             {/* Dados Cadastrais */}
-            <div className="bg-neutral-50 p-6 rounded-lg border border-neutral-200 space-y-4">
+            <div className="bg-neutral-50 p-6 rounded-xl border border-neutral-200 space-y-4">
               <h3 className="text-base font-bold text-neutral-900 flex items-center gap-2">
                 <Building2 className="w-4 h-4 text-orange-600" />
                 <span>Dados da Empresa</span>
@@ -68,6 +86,10 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
                 <div>
                   <span className="font-semibold text-neutral-900 block">CNPJ:</span>
                   <span className="font-mono">{businessConfig.cnpj}</span>
+                </div>
+                <div>
+                  <span className="font-semibold text-neutral-900 block">Atendimento:</span>
+                  <span>(47) 9185-8962 (WhatsApp Comercial)</span>
                 </div>
                 <div className="pt-2 border-t border-neutral-200">
                   <span className="font-semibold text-neutral-900 block flex items-center gap-1">
@@ -88,9 +110,7 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
 
           {/* Right: Embedded Form */}
           <div className="lg:col-span-7">
-            <div className="border border-neutral-200 rounded-lg p-6 sm:p-8 bg-white shadow-xs">
-              <InquiryForm />
-            </div>
+            <InquiryForm />
           </div>
 
         </div>
