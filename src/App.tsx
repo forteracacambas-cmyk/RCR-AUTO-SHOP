@@ -9,7 +9,10 @@ import { Hero } from './components/Hero';
 import { ThreeSteps } from './components/ThreeSteps';
 import { EngineGuidance } from './components/EngineGuidance';
 import { InquiryForm } from './components/InquiryForm';
+import { StockAndCondition } from './components/StockAndCondition';
+import { TransparencySection } from './components/TransparencySection';
 import { CommercialOrientation } from './components/CommercialOrientation';
+import { AboutSection } from './components/AboutSection';
 import { FaqSection } from './components/FaqSection';
 import { Footer } from './components/Footer';
 import { MobileStickyCta } from './components/MobileStickyCta';
@@ -65,7 +68,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-neutral-50 text-neutral-900 selection:bg-orange-600 selection:text-white">
-      {/* Discreet Persistent Header with Top Bar Contract */}
+      {/* Persistent Header with Top Bar Contract */}
       <Header
         currentPage={currentRoute}
         onNavigate={navigateTo}
@@ -80,13 +83,22 @@ export default function App() {
             <ThreeSteps onScrollToForm={scrollToForm} />
             <InquiryForm />
 
-            {/* 4. Engine Identification Guidance (No documents required) */}
+            {/* Nova Seção: Disponibilidade e Condição dos Motores */}
+            <StockAndCondition />
+
+            {/* Nova Seção: Transparência na Consulta */}
+            <TransparencySection />
+
+            {/* Como Identificar os Dados do Motor */}
             <EngineGuidance />
 
-            {/* 5. Commercial Orientation & Transparency Guidelines */}
+            {/* Como Conduzimos Cada Atendimento */}
             <CommercialOrientation />
 
-            {/* 6. FAQ Section */}
+            {/* Seção Sobre a Empresa na Landing Page */}
+            <AboutSection onScrollToForm={scrollToForm} />
+
+            {/* FAQ com as 9 perguntas */}
             <FaqSection />
           </>
         )}
@@ -108,7 +120,7 @@ export default function App() {
         )}
       </main>
 
-      {/* Complete Footer with Cadastral Data & Disclaimer */}
+      {/* Complete Footer with Cadastral Data & Navigation */}
       <Footer onNavigate={navigateTo} />
 
       <TrackingConsent />
