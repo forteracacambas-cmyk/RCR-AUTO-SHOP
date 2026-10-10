@@ -1,6 +1,7 @@
 import React from 'react';
 import engineHero from '../../engine-hero.webp';
-import { ArrowDown, HelpCircle } from 'lucide-react';
+import { businessConfig } from '../config/businessConfig';
+import { ArrowDown, MessageSquare } from 'lucide-react';
 
 interface HeroProps {
   onScrollToForm: () => void;
@@ -19,7 +20,7 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToForm }) => {
         aria-hidden="true"
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 lg:py-24 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Left Column: Direct commercial headline & clear proposition */}
@@ -50,11 +51,11 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToForm }) => {
               </button>
 
               <a
-                href="#como-identificar"
+                href={`https://wa.me/${businessConfig.whatsappNumber}?text=${encodeURIComponent('Olá! Gostaria de consultar a disponibilidade de um motor.')}`} target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium text-neutral-300 hover:text-white transition-colors border border-neutral-700 hover:border-neutral-500 rounded-md"
               >
-                <HelpCircle className="w-4 h-4 text-orange-400" aria-hidden="true" />
-                <span>Como identificar o motor</span>
+                <MessageSquare className="w-4 h-4 text-orange-400" aria-hidden="true" />
+                <span>Falar no WhatsApp</span>
               </a>
             </div>
 

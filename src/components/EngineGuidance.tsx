@@ -5,7 +5,7 @@ export const EngineGuidance: React.FC = () => {
   const guidanceCards = [
     {
       title: 'Modelo e Versão do Carro',
-      desc: 'Informe o nome do modelo e a versão do veículo conforme a identificação do veículo. Isso ajuda a equipe a identificar a configuração correta da montadora.',
+      desc: 'Informe o nome do modelo e a versão, conforme a identificação do veículo. Isso ajuda a equipe a identificar a configuração correta da montadora.',
       icon: Tag,
     },
     {
@@ -20,7 +20,7 @@ export const EngineGuidance: React.FC = () => {
     },
     {
       title: 'Código do Motor (Opcional)',
-      desc: 'Se o mecânico já identificou o código ou sigla do motor , informe no campo de observações para agilizar a conferência.',
+      desc: 'Se o mecânico já identificou o código ou sigla do motor, informe no campo de observações para agilizar a conferência.',
       icon: Layers,
     },
   ];
