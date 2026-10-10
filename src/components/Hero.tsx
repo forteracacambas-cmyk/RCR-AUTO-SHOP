@@ -21,7 +21,7 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToForm }) => {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 lg:py-24 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
           
           {/* Left Column: Direct commercial headline & clear proposition */}
           <div className="lg:col-span-7 flex flex-col items-start">
@@ -66,8 +66,16 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToForm }) => {
 
           </div>
 
-          <figure className="lg:col-span-5 w-full overflow-hidden rounded-2xl border border-neutral-800 bg-[#0E1013] shadow-2xl">
-            <img src={engineHero} alt="Ilustração de motor automotivo sem marca" width="1400" height="933" fetchPriority="high" className="w-full h-auto object-cover" />
+          <figure className="order-first lg:order-last lg:col-span-5 w-full lg:self-start overflow-hidden rounded-2xl border border-neutral-800 bg-[#0E1013] shadow-2xl">
+            <img 
+              src={engineHero} 
+              alt="Ilustração de motor automotivo sem marca" 
+              width="1400" 
+              height="933" 
+              fetchPriority="high" 
+              className="w-full h-auto object-cover object-top" 
+              style={{ objectPosition: 'top' }}
+            />
             <figcaption className="px-5 py-3 text-center text-xs text-neutral-400">Imagem ilustrativa. Consulte fotos do motor disponível no atendimento.</figcaption>
           </figure>
 

@@ -25,35 +25,70 @@ export function trackWhatsApp(done: () => void) {
   window.gtag('event', 'conversion', { send_to: CONVERSION, event_callback: finish, event_timeout: 1000 });
 }
 export const TrackingConsent: React.FC = () => {
-  const [open, setOpen] = useState(() => { try { return !localStorage.getItem(KEY); } catch { return true; } });
+  const [open, setOpen] = useState(() => { 
+    try { 
+      return localStorage.getItem(KEY) !== 'accepted'; 
+    } catch { 
+      return true; 
+    } 
+  });
+
   useEffect(() => {
     startTag();
     const handler = (event: MouseEvent) => {
       const link = (event.target as Element)?.closest('a');
       if (!link || event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-      const url = new URL(link.href);
-      if (url.hostname !== 'wa.me') return;
-      if (!measurementAllowed()) return;
-      event.preventDefault();
-      trackWhatsApp(() => { window.location.assign(link.href); });
+      try {
+        const url = new URL(link.href);
+        if (url.hostname !== 'wa.me') return;
+        if (!measurementAllowed()) return;
+        event.preventDefault();
+        trackWhatsApp(() => { window.location.assign(link.href); });
+      } catch {
+        // Ignore invalid URLs
+      }
     };
     document.addEventListener('click', handler);
     return () => document.removeEventListener('click', handler);
   }, []);
-  const choose = (accepted: boolean) => {
-    try { localStorage.setItem(KEY, accepted ? 'accepted' : 'rejected'); } catch { /* Continue without measurement. */ }
+
+  const acceptConsent = () => {
+    try { 
+      localStorage.setItem(KEY, 'accepted'); 
+    } catch { 
+      /* LocalStorage unavailable */ 
+    }
     setOpen(false);
-    if (accepted) startTag();
-    else if (window.gtag) window.location.reload();
+    startTag();
   };
-  return <>
-    <div className="bg-neutral-950 px-4 py-3 text-center"><button onClick={() => setOpen(true)} className="text-xs text-neutral-300 underline cursor-pointer">Preferências de cookies</button></div>
-    {open && <div role="dialog" aria-label="Preferências de privacidade" className="fixed bottom-0 inset-x-0 z-50 border-t border-neutral-200 bg-white p-4 shadow-lg">
-      <div className="mx-auto max-w-5xl flex flex-col sm:flex-row gap-3 sm:items-center">
-        <p className="flex-1 text-xs text-neutral-600">Podemos usar cookies do Google Ads para medir os contatos iniciados pelo site. Você pode aceitar ou continuar sem medição. <a href="/privacidade" className="underline">Política de Privacidade</a>.</p>
-        <button onClick={() => choose(false)} className="rounded-lg border border-neutral-300 px-4 py-2 text-sm cursor-pointer">Continuar sem medição</button>
-        <button onClick={() => choose(true)} className="rounded-lg bg-neutral-900 px-4 py-2 text-sm text-white cursor-pointer">Aceitar medição</button>
-      </div>
-    </div>}
-  </>;
+
+  return (
+    <>
+      {open && (
+        <div 
+          role="dialog" 
+          aria-label="Aviso de cookies e experiência do usuário" 
+          className="fixed bottom-0 inset-x-0 z-50 border-t border-neutral-800 bg-neutral-900/98 backdrop-blur-md p-4 sm:p-5 shadow-2xl text-white animate-in fade-in duration-300"
+        >
+          <div className="mx-auto max-w-5xl flex flex-col sm:flex-row gap-4 sm:items-center justify-between">
+            <div className="flex-1 text-xs sm:text-sm text-neutral-300 leading-relaxed">
+              <span className="font-semibold text-white block mb-0.5 sm:inline sm:mb-0 sm:mr-1.5">Cookies e Experiência:</span>
+              Utilizamos cookies e tecnologias de medição para entender melhor a sua experiência ao navegar em nosso site e aprimorar nossos serviços e atendimento.{' '}
+              <a href="/privacidade" className="text-orange-400 hover:text-orange-300 underline font-medium">
+                Política de Privacidade
+              </a>.
+            </div>
+            <div className="flex items-center shrink-0">
+              <button 
+                onClick={acceptConsent} 
+                className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-orange-600 hover:bg-orange-500 active:bg-orange-700 px-5 py-2.5 text-sm font-bold text-white shadow-md transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400"
+              >
+                Aceitar medição
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
 };

@@ -76,9 +76,9 @@ export default function App() {
       <main className="flex-1">
         {currentRoute === '/' && (
           <>
-            <InquiryForm />
             <Hero onScrollToForm={scrollToForm} />
             <ThreeSteps onScrollToForm={scrollToForm} />
+            <InquiryForm />
 
             {/* 4. Engine Identification Guidance (No documents required) */}
             <EngineGuidance />
