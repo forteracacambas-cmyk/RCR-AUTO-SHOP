@@ -22,7 +22,7 @@ export const InquiryForm: React.FC = () => {
       ...(vehicle.trim() ? [`Meu veículo: ${vehicle.trim()}.`] : []),
       'Podem me enviar fotos, valor e condições caso haja uma opção compatível disponível?'
     ].join('\n\n');
-    window.open(`https://wa.me/${businessConfig.whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+    window.location.assign(`https://wa.me/${businessConfig.whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`);
   };
   const fieldClass = 'w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-base text-neutral-900 focus:outline-none focus:ring-2 focus:ring-orange-500';
   return (

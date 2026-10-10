@@ -20,7 +20,7 @@ export const EngineGuidance: React.FC = () => {
     },
     {
       title: 'Código do Motor (Opcional)',
-      desc: 'Se o mecânico já identificou o código ou sigla do motor, informe no campo de observações para agilizar a conferência.',
+      desc: 'Se o mecânico já identificou o código ou sigla do motor, informe durante o atendimento para agilizar a conferência.',
       icon: Layers,
     },
   ];
