@@ -1,3 +1,4 @@
+import { SectionImage } from './SectionImage';
 import React, { useState } from 'react';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 import { FaqItem } from '../types';
@@ -51,6 +52,7 @@ export const FaqSection: React.FC = () => {
     <section id="faq" className="py-16 sm:py-20 bg-neutral-50 border-b border-neutral-200">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
+        <div className="grid gap-8 lg:grid-cols-2 items-center">
         {/* Header */}
         <div className="text-left mb-12">
           <div className="text-xs font-semibold tracking-widest text-orange-600 uppercase mb-2 flex items-center gap-1.5">
@@ -63,6 +65,9 @@ export const FaqSection: React.FC = () => {
           <p className="mt-2 text-base text-neutral-600">
             Tire suas dúvidas sobre como consultar a disponibilidade do motor para seu veículo.
           </p>
+        </div>
+
+          <SectionImage image="engine" caption="Solicite fotos reais quando houver uma opção disponível." />
         </div>
 
         {/* Accordion List */}

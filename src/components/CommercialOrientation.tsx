@@ -1,3 +1,4 @@
+import { SectionImage } from './SectionImage';
 import React from 'react';
 import { Shield, Cpu, Truck, FileSignature } from 'lucide-react';
 
@@ -29,8 +30,9 @@ export const CommercialOrientation: React.FC = () => {
     <section className="py-16 sm:py-20 bg-white border-b border-neutral-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
+        <div className="grid gap-8 lg:grid-cols-2 items-center">
         {/* Section Header */}
-        <div className="max-w-3xl">
+          <div className="max-w-3xl">
           <div className="text-xs font-semibold tracking-widest text-orange-600 uppercase mb-2">
             Informações Úteis
           </div>
@@ -40,6 +42,9 @@ export const CommercialOrientation: React.FC = () => {
           <p className="mt-3 text-base text-neutral-600 leading-relaxed">
             Nossa equipe atua para que você tenha todas as informações sobre o motor antes de concluir sua compra.
           </p>
+        </div>
+
+          <SectionImage image="shipping" caption="Consulte as condições de envio no atendimento." />
         </div>
 
         {/* Orientation Cards */}

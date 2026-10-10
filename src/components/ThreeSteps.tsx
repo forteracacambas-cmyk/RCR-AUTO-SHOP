@@ -1,3 +1,4 @@
+import { SectionImage } from './SectionImage';
 import React from 'react';
 import { Search, Image, Calculator, ArrowRight } from 'lucide-react';
 
@@ -34,8 +35,9 @@ export const ThreeSteps: React.FC<ThreeStepsProps> = ({ onScrollToForm }) => {
     <section className="py-16 sm:py-20 bg-white border-b border-neutral-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
+        <div className="grid gap-8 lg:grid-cols-2 items-center">
         {/* Section Header */}
-        <div className="max-w-3xl">
+          <div className="max-w-3xl">
           <div className="text-xs font-semibold tracking-widest text-orange-600 uppercase mb-2">
             Como Funciona
           </div>
@@ -45,6 +47,9 @@ export const ThreeSteps: React.FC<ThreeStepsProps> = ({ onScrollToForm }) => {
           <p className="mt-3 text-base text-neutral-600 leading-relaxed">
             Atendimento direto e prático para você receber todas as informações antes de tomar sua decisão.
           </p>
+        </div>
+
+          <SectionImage image="inspection" caption="Conte os dados do veículo para iniciar a consulta." />
         </div>
 
         {/* 3 Steps Cards */}

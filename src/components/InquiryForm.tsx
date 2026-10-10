@@ -1,3 +1,4 @@
+import { SectionImage } from './SectionImage';
 import React, { useState } from 'react';
 import { MessageSquare, ArrowUpRight } from 'lucide-react';
 import { businessConfig } from '../config/businessConfig';
@@ -33,6 +34,7 @@ export const InquiryForm: React.FC = () => {
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-neutral-900">Qual motor você procura?</h2>
             <p className="mt-4 leading-relaxed text-neutral-600">Informe seu nome e o motor desejado. Nossa equipe consulta a disponibilidade e envia fotos e orçamento quando houver uma opção para o seu veículo.</p>
             <p className="mt-4 text-sm text-neutral-500">As opções abaixo ajudam a organizar sua consulta. A disponibilidade e a compatibilidade são confirmadas no atendimento.</p>
+            <div className="mt-6"><SectionImage image="detail" compact caption="Disponibilidade confirmada pelo WhatsApp." /></div>
           </div>
           <form action={`https://wa.me/${businessConfig.whatsappNumber.replace(/\D/g, '')}`} method="get" onSubmit={submit} noValidate className="rounded-2xl border border-neutral-200 bg-neutral-50 p-5 sm:p-7 space-y-5">
             <input type="hidden" name="text" value={message} />

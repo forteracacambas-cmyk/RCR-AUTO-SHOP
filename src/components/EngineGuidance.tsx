@@ -1,3 +1,4 @@
+import { SectionImage } from './SectionImage';
 import React from 'react';
 import { Tag, FileCheck, Layers, Gauge } from 'lucide-react';
 
@@ -29,8 +30,9 @@ export const EngineGuidance: React.FC = () => {
     <section id="como-identificar" className="py-16 sm:py-20 bg-neutral-50 border-b border-neutral-200 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
+        <div className="grid gap-8 lg:grid-cols-2 items-center">
         {/* Section Header */}
-        <div className="max-w-3xl">
+          <div className="max-w-3xl">
           <div className="text-xs font-semibold tracking-widest text-orange-600 uppercase mb-2">
             Ajuda
           </div>
@@ -40,6 +42,9 @@ export const EngineGuidance: React.FC = () => {
           <p className="mt-3 text-base text-neutral-600 leading-relaxed">
             Confira quais são as principais informações do veículo que facilitam a consulta do motor adequado.
           </p>
+        </div>
+
+          <SectionImage image="detail" caption="Modelo e motorização ajudam na conferência." />
         </div>
 
         {/* Guidance Grid */}
