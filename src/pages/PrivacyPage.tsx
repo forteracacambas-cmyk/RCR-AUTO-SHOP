@@ -49,10 +49,10 @@ export const PrivacyPage: React.FC<PrivacyPageProps> = () => {
               <span>1. Dados do Formulário de Consulta</span>
             </h2>
             <p>
-              Os dados técnicos inseridos no formulário (marca, modelo, ano de fabricação, motorização e observações) são processados no próprio navegador do usuário para gerar o texto da consulta.
+              Os dados inseridos no formulário (nome, motor desejado e veículo opcional) são processados no próprio navegador do usuário para gerar o texto da consulta.
             </p>
             <p className="mt-2">
-              Esses dados não são gravados em banco de dados do site. A mensagem é preparada localmente para que o visitante possa copiá-la ou enviá-la pelo WhatsApp pelo canal comercial.
+              Esses dados não são gravados em banco de dados do site. A mensagem é preparada localmente para que o visitante possa enviá-la pelo WhatsApp comercial.
             </p>
           </div>
 

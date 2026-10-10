@@ -23,7 +23,7 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
               Contato
             </h1>
             <p className="mt-4 text-base sm:text-lg text-neutral-300 leading-relaxed">
-              Consulte a identificação da empresa e utilize o formulário abaixo para preparar sua consulta de motor.
+              Fale com a equipe pelo WhatsApp ou preencha o formulário para consultar o motor desejado.
             </p>
           </div>
         </div>
@@ -89,19 +89,6 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
           {/* Right: Embedded Form */}
           <div className="lg:col-span-7">
             <div className="border border-neutral-200 rounded-lg p-6 sm:p-8 bg-white shadow-xs">
-              <div className="mb-6">
-                <div className="text-xs font-semibold tracking-widest text-orange-600 uppercase mb-1 flex items-center gap-1.5">
-                  <MessageSquare className="w-3.5 h-3.5" />
-                  <span>Consulta Rápida</span>
-                </div>
-                <h2 className="text-xl font-bold text-neutral-900">
-                  Qual motor você procura?
-                </h2>
-                <p className="text-xs sm:text-sm text-neutral-600 mt-1">
-                  Preencha os dados do veículo para agilizar o atendimento.
-                </p>
-              </div>
-
               <InquiryForm />
             </div>
           </div>
