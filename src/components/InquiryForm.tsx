@@ -9,20 +9,19 @@ export const InquiryForm: React.FC = () => {
   const [engine, setEngine] = useState('');
   const [vehicle, setVehicle] = useState('');
   const [error, setError] = useState('');
+  const message = [
+    `Olá, RCR AUTO SHOP! Meu nome é ${name.trim()}.`,
+    `Gostaria de consultar a disponibilidade de: ${engine}.`,
+    ...(vehicle.trim() ? [`Meu veículo: ${vehicle.trim()}.`] : []),
+    'Podem me enviar fotos, valor e condições caso haja uma opção compatível disponível?'
+  ].join('\n\n');
   const submit = (event: React.FormEvent) => {
-    event.preventDefault();
     if (!name.trim() || !engine) {
+      event.preventDefault();
       setError('Informe seu nome e selecione o motor que procura.');
       return;
     }
     setError('');
-    const message = [
-      `Olá, RCR AUTO SHOP! Meu nome é ${name.trim()}.`,
-      `Gostaria de consultar a disponibilidade de: ${engine}.`,
-      ...(vehicle.trim() ? [`Meu veículo: ${vehicle.trim()}.`] : []),
-      'Podem me enviar fotos, valor e condições caso haja uma opção compatível disponível?'
-    ].join('\n\n');
-    window.location.assign(`https://wa.me/${businessConfig.whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`);
   };
   const fieldClass = 'w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-base text-neutral-900 focus:outline-none focus:ring-2 focus:ring-orange-500';
   return (
@@ -35,7 +34,8 @@ export const InquiryForm: React.FC = () => {
             <p className="mt-4 leading-relaxed text-neutral-600">Informe seu nome e o motor desejado. Nossa equipe consulta a disponibilidade e envia fotos e orçamento quando houver uma opção para o seu veículo.</p>
             <p className="mt-4 text-sm text-neutral-500">As opções abaixo ajudam a organizar sua consulta. A disponibilidade e a compatibilidade são confirmadas no atendimento.</p>
           </div>
-          <form onSubmit={submit} noValidate className="rounded-2xl border border-neutral-200 bg-neutral-50 p-5 sm:p-7 space-y-5">
+          <form action={`https://wa.me/${businessConfig.whatsappNumber.replace(/\D/g, '')}`} method="get" onSubmit={submit} noValidate className="rounded-2xl border border-neutral-200 bg-neutral-50 p-5 sm:p-7 space-y-5">
+            <input type="hidden" name="text" value={message} />
             <div>
               <label htmlFor="customer-name" className="mb-2 block text-sm font-semibold">Seu nome *</label>
               <input id="customer-name" autoComplete="given-name" maxLength={100} value={name} onChange={e => setName(e.target.value)} placeholder="Como podemos chamar você?" className={fieldClass} required />
