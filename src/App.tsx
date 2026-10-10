@@ -75,14 +75,9 @@ export default function App() {
       <main className="flex-1">
         {currentRoute === '/' && (
           <>
-            {/* 1. Hero Section */}
-            <Hero onScrollToForm={scrollToForm} />
-
-            {/* 2. 3-Step Consultation Flow */}
-            <ThreeSteps onScrollToForm={scrollToForm} />
-
-            {/* 3. Inquiry Form Section */}
             <InquiryForm />
+            <Hero onScrollToForm={scrollToForm} />
+            <ThreeSteps onScrollToForm={scrollToForm} />
 
             {/* 4. Engine Identification Guidance (No documents required) */}
             <EngineGuidance />
