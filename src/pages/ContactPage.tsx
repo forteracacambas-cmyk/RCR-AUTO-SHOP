@@ -44,12 +44,14 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
                 <span>Atendimento</span>
               </div>
               <h2 className="text-lg font-bold text-white mb-2">
-                WhatsApp em breve
+                Atendimento pelo WhatsApp
               </h2>
               <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed">
-                Nosso canal de atendimento pelo WhatsApp está em fase final de configuração. Você pode preparar os dados da sua consulta ao lado para facilitar o contato.
+                Informe seu veículo para consultar disponibilidade, fotos e orçamento.
               </p>
             </div>
+
+            <a href={`https://wa.me/${businessConfig.whatsappNumber}?text=${encodeURIComponent('Olá! Gostaria de consultar a disponibilidade de um motor.')}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-md bg-emerald-700 hover:bg-emerald-600 px-5 py-3 font-semibold text-white focus-visible:outline-2 focus-visible:outline-emerald-500">Falar no WhatsApp · (47) 9185-8962</a>
 
             {/* Dados Cadastrais */}
             <div className="bg-neutral-50 p-6 rounded-lg border border-neutral-200 space-y-4">

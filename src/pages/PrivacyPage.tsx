@@ -52,7 +52,7 @@ export const PrivacyPage: React.FC<PrivacyPageProps> = () => {
               Os dados técnicos inseridos no formulário (marca, modelo, ano de fabricação, motorização e observações) são processados no próprio navegador do usuário para gerar o texto da consulta.
             </p>
             <p className="mt-2">
-              Esses dados não são gravados em banco de dados do site. A mensagem é preparada localmente para que o visitante possa copiá-la ou enviá-la pelo WhatsApp quando o canal estiver disponível.
+              Esses dados não são gravados em banco de dados do site. A mensagem é preparada localmente para que o visitante possa copiá-la ou enviá-la pelo WhatsApp pelo canal comercial.
             </p>
           </div>
 
@@ -81,6 +81,7 @@ export const PrivacyPage: React.FC<PrivacyPageProps> = () => {
             </p>
           </div>
 
+          <p>Para solicitar informações sobre privacidade ou exercer seus direitos, fale com a RCR AUTO SHOP pelo <a href="https://wa.me/554791858962" target="_blank" rel="noopener noreferrer" className="text-orange-700 underline">WhatsApp comercial: (47) 9185-8962</a>.</p>
           {/* 4. Controlador dos Dados */}
           <div className="pt-6 border-t border-neutral-200 text-xs sm:text-sm text-neutral-600">
             <span className="font-semibold text-neutral-900 block mb-1">Identificação da Empresa:</span>
