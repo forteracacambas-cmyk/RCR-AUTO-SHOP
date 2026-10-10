@@ -10,12 +10,12 @@ export const FaqSection: React.FC = () => {
     {
       question: 'Como funciona a consulta de motor?',
       answer:
-        'Você informa seu nome, seleciona o motor e clica em Consultar no WhatsApp. O aplicativo abre com a mensagem preenchida para você enviar. Nossa equipe confirma as opções disponíveis.',
+        'Você seleciona o motor e o ano, informa seu veículo e clica em Consultar no WhatsApp. O aplicativo abre com a mensagem preenchida para você enviar. Nossa equipe confirma as opções disponíveis.',
     },
     {
       question: 'Quais dados eu preciso informar no formulário?',
       answer:
-        'Informe seu nome e selecione o motor desejado. O modelo e o ano do veículo são opcionais no formulário e ajudam a conferir a compatibilidade durante o atendimento.',
+        'Selecione o motor desejado, escolha o ano e digite a marca e o modelo do veículo. Os três campos são obrigatórios e ajudam a conferir a compatibilidade durante o atendimento.',
     },
     {
       question: 'Como recebo as fotos do motor?',
