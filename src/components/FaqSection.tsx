@@ -10,37 +10,47 @@ export const FaqSection: React.FC = () => {
     {
       question: 'Como funciona a consulta de motor?',
       answer:
-        'Você seleciona o motor e o ano, informa seu veículo e clica em Consultar no WhatsApp. O aplicativo abre com a mensagem preenchida para você enviar. Nossa equipe confirma as opções disponíveis.',
+        'Você informa os dados do veículo pelo formulário ou WhatsApp. Nossa equipe consulta a disponibilidade e, caso exista uma unidade compatível, apresenta as informações e condições disponíveis.',
     },
     {
-      question: 'Quais dados eu preciso informar no formulário?',
+      question: 'Quais dados preciso informar?',
       answer:
-        'Selecione o motor desejado, escolha o ano e digite a marca e o modelo do veículo. Os três campos são obrigatórios e ajudam a conferir a compatibilidade durante o atendimento.',
+        'Preferencialmente marca, modelo, ano, motorização e, caso possua, código ou identificação do motor.',
     },
     {
-      question: 'Como recebo as fotos do motor?',
+      question: 'A disponibilidade é garantida?',
       answer:
-        'Quando houver uma opção disponível para o seu veículo, nossa equipe envia fotos e os detalhes da peça pelo WhatsApp para você avaliar.',
+        'Não. O estoque pode mudar e a disponibilidade deve ser confirmada no momento do atendimento.',
+    },
+    {
+      question: 'Como recebo as informações do motor?',
+      answer:
+        'Após a consulta, nossa equipe apresenta as informações disponíveis sobre a unidade encontrada antes da conclusão da negociação.',
     },
     {
       question: 'Qual é a condição do motor?',
       answer:
-        'A condição e os detalhes do motor serão informados na proposta enviada pela equipe.',
+        'A RCR AUTO SHOP comercializa exclusivamente motores usados, com procedência, nota fiscal e garantia. As características específicas da unidade disponível são informadas pela equipe durante o atendimento.',
     },
     {
-      question: 'Como funciona o orçamento e a entrega?',
+      question: 'Como funciona orçamento e entrega?',
       answer:
-        'O valor da peça e as opções de envio para sua região são informados no atendimento antes de você tomar qualquer decisão.',
+        'Valores, condições comerciais e possibilidade de envio são informados pela equipe após a consulta do veículo e da unidade disponível.',
     },
     {
       question: 'Posso retirar no endereço da empresa?',
       answer:
-        'Nosso endereço é cadastral. Consulte a equipe antes de se deslocar para atendimento ou retirada.',
+        'Nosso endereço em São Caetano do Sul é cadastral. Consulte a equipe antes de se deslocar para verificar se há possibilidade de atendimento presencial ou retirada da sua unidade.',
     },
     {
       question: 'O motor possui garantia?',
       answer:
-        'Sim, todas as operações respeitam as garantias legais previstas no Código de Defesa do Consumidor (CDC). As condições e detalhes são informados na proposta.',
+        'Sim, todos os motores comercializados possuem garantia e nota fiscal, respeitando os direitos legais do consumidor. Prazo, cobertura e condições aplicáveis à unidade específica serão informados pela equipe antes da compra.',
+    },
+    {
+      question: 'Vocês possuem todos os motores disponíveis?',
+      answer:
+        'Não necessariamente. O estoque é dinâmico e a disponibilidade é verificada conforme os dados do veículo e o momento da consulta.',
     },
   ];
 
@@ -49,25 +59,25 @@ export const FaqSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-16 sm:py-20 bg-neutral-50 border-b border-neutral-200">
+    <section id="faq" className="py-16 sm:py-20 bg-neutral-50 border-b border-neutral-200 scroll-mt-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid gap-8 lg:grid-cols-2 items-center">
-        {/* Header */}
-        <div className="text-left mb-12">
-          <div className="text-xs font-semibold tracking-widest text-orange-600 uppercase mb-2 flex items-center gap-1.5">
-            <HelpCircle className="w-3.5 h-3.5" />
-            <span>Dúvidas Frequentes</span>
+        <div className="grid gap-8 lg:grid-cols-2 items-center mb-12">
+          {/* Header */}
+          <div className="text-left">
+            <div className="text-xs font-semibold tracking-widest text-orange-600 uppercase mb-2 flex items-center gap-1.5">
+              <HelpCircle className="w-3.5 h-3.5" />
+              <span>Dúvidas Frequentes</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900">
+              Perguntas Frequentes
+            </h2>
+            <p className="mt-2 text-base text-neutral-600">
+              Tire suas dúvidas sobre consulta, motores usados, procedência, garantia e condições de atendimento.
+            </p>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900">
-            Perguntas Frequentes
-          </h2>
-          <p className="mt-2 text-base text-neutral-600">
-            Tire suas dúvidas sobre como consultar a disponibilidade do motor para seu veículo.
-          </p>
-        </div>
 
-          <SectionImage image="engine" caption="Solicite fotos reais quando houver uma opção disponível." />
+          <SectionImage image="engine" caption="Solicite fotos e detalhes da unidade disponível no atendimento." />
         </div>
 
         {/* Accordion List */}

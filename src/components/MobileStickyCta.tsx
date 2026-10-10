@@ -40,14 +40,14 @@ export const MobileStickyCta: React.FC<MobileStickyCtaProps> = ({ onScrollToForm
       <div className="max-w-md mx-auto flex items-center justify-between gap-3 px-1">
         <div className="flex flex-col text-left">
           <span className="text-[10px] uppercase font-mono text-neutral-400 leading-tight">RCR AUTO SHOP</span>
-          <span className="text-xs font-bold text-white leading-tight">Motores Automotivos</span>
+          <span className="text-xs font-bold text-white leading-tight">Motores Usados</span>
         </div>
         <button
           onClick={onScrollToForm}
-          className="inline-flex items-center gap-1.5 py-2 px-3.5 bg-orange-600 hover:bg-orange-500 active:bg-orange-700 text-white rounded text-xs font-bold uppercase tracking-wider transition-colors shadow-sm cursor-pointer whitespace-nowrap"
+          className="inline-flex items-center gap-1.5 py-2 px-3.5 bg-orange-600 hover:bg-orange-500 active:bg-orange-700 text-white rounded-md text-xs font-bold uppercase tracking-wider transition-colors shadow-sm cursor-pointer whitespace-nowrap"
         >
           <MessageSquare className="w-3.5 h-3.5" aria-hidden="true" />
-          <span>Consultar</span>
+          <span>CONSULTAR</span>
           <ArrowRight className="w-3 h-3" aria-hidden="true" />
         </button>
       </div>

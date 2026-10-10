@@ -12,42 +12,42 @@ export const ThreeSteps: React.FC<ThreeStepsProps> = ({ onScrollToForm }) => {
       number: '01',
       title: 'Informe o veículo',
       description:
-        'Conte qual é a marca, modelo, ano e motorização do seu carro para iniciarmos o atendimento.',
+        'Informe marca, modelo, ano e motorização do veículo. Quanto mais informações forem fornecidas, mais precisa será a consulta.',
       icon: Search,
     },
     {
       number: '02',
-      title: 'Consulte opções e fotos',
+      title: 'Consultamos a disponibilidade',
       description:
-        'Nossa equipe consulta a disponibilidade e envia fotos e orçamento quando houver uma opção para seu veículo.',
+        'Nossa equipe verifica as unidades disponíveis no momento da consulta e analisa a compatibilidade com as informações enviadas.',
       icon: Image,
     },
     {
       number: '03',
-      title: 'Avalie orçamento e condições',
+      title: 'Receba as informações',
       description:
-        'A condição e os detalhes do motor serão informados na proposta, junto com o valor e as informações de entrega.',
+        'Caso exista uma opção compatível disponível, nossa equipe apresenta os detalhes da unidade, condição, informações comerciais, entrega e demais condições aplicáveis.',
       icon: Calculator,
     },
   ];
 
   return (
-    <section className="py-16 sm:py-20 bg-white border-b border-neutral-200">
+    <section id="como-funciona" className="py-16 sm:py-20 bg-white border-b border-neutral-200 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="grid gap-8 lg:grid-cols-2 items-center">
-        {/* Section Header */}
+          {/* Section Header */}
           <div className="max-w-3xl">
-          <div className="text-xs font-semibold tracking-widest text-orange-600 uppercase mb-2">
-            Como Funciona
+            <div className="text-xs font-semibold tracking-widest text-orange-600 uppercase mb-2">
+              Como Funciona
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900">
+              Passo a passo para consultar seu motor
+            </h2>
+            <p className="mt-3 text-base text-neutral-600 leading-relaxed">
+              Nosso atendimento é feito por consulta. Você informa os dados do veículo e nossa equipe verifica as opções disponíveis para sua aplicação antes de qualquer negociação.
+            </p>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900">
-            Passo a passo para consultar seu motor
-          </h2>
-          <p className="mt-3 text-base text-neutral-600 leading-relaxed">
-            Atendimento direto e prático para você receber todas as informações antes de tomar sua decisão.
-          </p>
-        </div>
 
           <SectionImage image="inspection" caption="Conte os dados do veículo para iniciar a consulta." />
         </div>

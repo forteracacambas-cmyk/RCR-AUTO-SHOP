@@ -42,6 +42,20 @@ export const Header: React.FC<HeaderProps> = ({
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleAnchorClick = (anchorId: string) => {
+    setMobileMenuOpen(false);
+    if (currentPage !== '/') {
+      onNavigate('/');
+      setTimeout(() => {
+        const el = document.getElementById(anchorId);
+        el?.scrollIntoView({ behavior: 'smooth' });
+      }, 120);
+    } else {
+      const el = document.getElementById(anchorId);
+      el?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const handleConsultClick = () => {
     setMobileMenuOpen(false);
     if (currentPage !== '/') {
@@ -83,29 +97,18 @@ export const Header: React.FC<HeaderProps> = ({
               Início
             </button>
             <button
-              onClick={() => {
-                if (currentPage !== '/') {
-                  onNavigate('/');
-                  setTimeout(() => {
-                    const el = document.getElementById('como-identificar');
-                    el?.scrollIntoView({ behavior: 'smooth' });
-                  }, 120);
-                } else {
-                  const el = document.getElementById('como-identificar');
-                  el?.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
+              onClick={() => handleAnchorClick('como-funciona')}
               className="hover:text-white transition-colors cursor-pointer py-1 whitespace-nowrap shrink-0 border-b-2 border-transparent text-neutral-300"
             >
-              Como Identificar
+              Como funciona
             </button>
             <button
-              onClick={() => handleNavClick('/sobre')}
+              onClick={() => handleAnchorClick('sobre')}
               className={`hover:text-white transition-colors cursor-pointer py-1 whitespace-nowrap shrink-0 border-b-2 ${
                 currentPage === '/sobre' ? 'text-white border-orange-500' : 'border-transparent'
               }`}
             >
-              Sobre
+              Sobre a empresa
             </button>
             <button
               onClick={() => handleNavClick('/condicoes-comerciais')}
@@ -131,7 +134,7 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={handleConsultClick}
               className="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white bg-orange-600 hover:bg-orange-500 active:bg-orange-700 rounded-md transition-colors shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 cursor-pointer whitespace-nowrap shrink-0"
             >
-              <span>Consultar disponibilidade</span>
+              <span>CONSULTAR DISPONIBILIDADE</span>
               <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
             </button>
           </div>
@@ -191,28 +194,16 @@ export const Header: React.FC<HeaderProps> = ({
                   Início
                 </button>
                 <button
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    if (currentPage !== '/') {
-                      onNavigate('/');
-                      setTimeout(() => {
-                        document.getElementById('como-identificar')?.scrollIntoView({ behavior: 'smooth' });
-                      }, 120);
-                    } else {
-                      document.getElementById('como-identificar')?.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
+                  onClick={() => handleAnchorClick('como-funciona')}
                   className="text-left px-3 py-2.5 rounded-md text-sm font-medium text-neutral-300 hover:bg-neutral-800"
                 >
-                  Como Identificar o Motor
+                  Como funciona
                 </button>
                 <button
-                  onClick={() => handleNavClick('/sobre')}
-                  className={`text-left px-3 py-2.5 rounded-md text-sm font-medium transition-colors ${
-                    currentPage === '/sobre' ? 'bg-orange-600/10 text-orange-400' : 'text-neutral-300 hover:bg-neutral-800'
-                  }`}
+                  onClick={() => handleAnchorClick('sobre')}
+                  className="text-left px-3 py-2.5 rounded-md text-sm font-medium text-neutral-300 hover:bg-neutral-800"
                 >
-                  Sobre a Empresa
+                  Sobre a empresa
                 </button>
                 <button
                   onClick={() => handleNavClick('/condicoes-comerciais')}
@@ -246,7 +237,7 @@ export const Header: React.FC<HeaderProps> = ({
                 onClick={handleConsultClick}
                 className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-md bg-orange-600 text-white font-semibold text-sm hover:bg-orange-500 transition-colors"
               >
-                <span>Consultar disponibilidade</span>
+                <span>CONSULTAR DISPONIBILIDADE</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>

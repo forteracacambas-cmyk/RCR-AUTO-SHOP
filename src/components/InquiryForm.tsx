@@ -57,7 +57,7 @@ export const InquiryForm: React.FC = () => {
             <span className="text-xs font-bold uppercase tracking-widest text-orange-700">Consulta pelo WhatsApp</span>
             <h2 className="mt-2 text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900">Qual motor você procura?</h2>
             <p className="mt-2 text-sm sm:text-base leading-relaxed text-neutral-600">
-              Selecione o motor e o ano, e digite o seu veículo. Nossa equipe consulta a disponibilidade e envia fotos e orçamento quando houver uma opção compatível.
+              Selecione a motorização, informe o ano e escreva o veículo que você procura. Nossa equipe utilizará essas informações para consultar a disponibilidade.
             </p>
           </div>
 
@@ -120,7 +120,7 @@ export const InquiryForm: React.FC = () => {
             <div>
               <label htmlFor="vehicle-details" className="mb-2 flex items-center gap-2 text-sm font-semibold text-white">
                 <span aria-hidden="true" className="flex h-6 w-6 items-center justify-center rounded-full bg-orange-500 text-xs text-neutral-950 font-bold">3</span>
-                Veículo (Marca e Modelo) *
+                Veículo / Marca / Modelo *
               </label>
               <input 
                 id="vehicle-details" 
@@ -144,9 +144,14 @@ export const InquiryForm: React.FC = () => {
               className="flex min-h-16 w-full items-center justify-center gap-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 px-4 py-4 text-base font-bold text-white shadow-lg shadow-emerald-950/30 transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-400 cursor-pointer"
             >
               <MessageSquare size={20} aria-hidden="true" />
-              <span>Consultar no WhatsApp</span>
+              <span>CONSULTAR NO WHATSAPP</span>
               <ArrowUpRight size={18} aria-hidden="true" />
             </button>
+
+            {/* Aviso claro sobre reserva e disponibilidade */}
+            <p className="text-xs text-neutral-300 leading-relaxed bg-neutral-950/60 border border-neutral-800/80 rounded-lg p-3">
+              A consulta não representa reserva de estoque. A disponibilidade será confirmada pela equipe durante o atendimento.
+            </p>
 
             <p className="text-xs leading-relaxed text-neutral-400">
               Ao clicar, o WhatsApp abre com sua mensagem preenchida para envio direto à nossa equipe. Não exigimos cadastro prévio, CPF ou documentos no site.{' '}
