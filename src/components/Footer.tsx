@@ -41,7 +41,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </div>
               
               <p className="mt-3 text-xs sm:text-sm text-neutral-400 leading-relaxed max-w-sm">
-                Consulta e comercialização exclusiva de motores automotivos usados, com procedência, nota fiscal e garantia. Estoque sujeito à disponibilidade.
+                Consulta e comercialização exclusiva de motores automotivos usados, com procedência, nota fiscal e garantia. Disponibilidade confirmada no atendimento.
               </p>
             </div>
           </div>

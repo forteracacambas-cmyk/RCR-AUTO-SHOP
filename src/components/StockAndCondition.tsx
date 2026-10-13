@@ -4,8 +4,8 @@ import { RefreshCw, ShieldCheck, CheckCircle2 } from 'lucide-react';
 export const StockAndCondition: React.FC = () => {
   const blocks = [
     {
-      title: 'ESTOQUE VARIÁVEL',
-      desc: 'As unidades disponíveis podem mudar. A disponibilidade apresentada durante o atendimento deve ser confirmada antes da conclusão da compra.',
+      title: 'DISPONIBILIDADE DINÂMICA',
+      desc: 'As opções disponíveis podem mudar. A disponibilidade apresentada durante o atendimento deve ser confirmada antes da conclusão da compra.',
       icon: RefreshCw,
     },
     {
@@ -31,10 +31,10 @@ export const StockAndCondition: React.FC = () => {
             Disponibilidade e condição dos motores
           </h2>
           <p className="mt-3 text-base text-neutral-300 leading-relaxed">
-            Nosso estoque é dinâmico e pode mudar ao longo do dia. Por isso, trabalhamos com consulta de disponibilidade de acordo com o veículo informado pelo cliente.
+            A disponibilidade dos motores pode variar. Informe os dados do veículo para nossa equipe consultar uma opção compatível antes da negociação.
           </p>
           <p className="mt-2 text-sm text-orange-400/90 font-medium">
-            Motores usados com procedência, nota fiscal e garantia. Estoque sujeito à disponibilidade.
+            Motores usados com procedência, nota fiscal e garantia. Disponibilidade confirmada no atendimento.
           </p>
         </div>
 

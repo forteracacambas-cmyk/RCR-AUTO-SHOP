@@ -44,7 +44,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onScrollToForm
               Nossa Atuação
             </h2>
             <p className="text-neutral-700 leading-relaxed text-base">
-              A <strong>RCR AUTO SHOP</strong> atua com atendimento especializado para consulta de motores automotivos. Comercializamos motores usados com procedência, nota fiscal e garantia. Estoque sujeito à disponibilidade.
+              A <strong>RCR AUTO SHOP</strong> atua com atendimento especializado para consulta de motores automotivos. Comercializamos motores usados com procedência, nota fiscal e garantia. Disponibilidade confirmada no atendimento.
             </p>
             <p className="mt-3 text-neutral-700 leading-relaxed text-base">
               O processo é realizado de acordo com as informações do veículo e a disponibilidade existente no momento do atendimento. Nosso objetivo é fornecer informações claras para que o cliente possa avaliar a opção encontrada antes da conclusão da negociação.

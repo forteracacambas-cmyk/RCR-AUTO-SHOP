@@ -23,7 +23,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onScrollToForm }) =>
             </h2>
             
             <p className="mt-4 text-base text-neutral-700 leading-relaxed">
-              A <strong>RCR AUTO SHOP</strong> atua com atendimento especializado para consulta de motores automotivos. Comercializamos exclusivamente motores usados, com procedência, nota fiscal e garantia. Estoque sujeito à disponibilidade.
+              A <strong>RCR AUTO SHOP</strong> atua com atendimento especializado para consulta de motores automotivos. Comercializamos exclusivamente motores usados, com procedência, nota fiscal e garantia. Disponibilidade confirmada no atendimento.
             </p>
             
             <p className="mt-3 text-base text-neutral-700 leading-relaxed">

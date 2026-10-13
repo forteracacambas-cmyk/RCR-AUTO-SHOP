@@ -148,9 +148,9 @@ export const InquiryForm: React.FC = () => {
               <ArrowUpRight size={18} aria-hidden="true" />
             </button>
 
-            {/* Aviso claro sobre reserva e disponibilidade */}
+            {/* Aviso claro sobre consulta e disponibilidade */}
             <p className="text-xs text-neutral-300 leading-relaxed bg-neutral-950/60 border border-neutral-800/80 rounded-lg p-3">
-              A consulta não representa reserva de estoque. A disponibilidade será confirmada pela equipe durante o atendimento.
+              A consulta não representa reserva imediata. A disponibilidade é verificada pela nossa equipe durante o atendimento.
             </p>
 
             <p className="text-xs leading-relaxed text-neutral-400">

@@ -43,7 +43,7 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToForm }) => {
             {/* Selo textual discreto confirmado */}
             <div className="mt-5 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-neutral-900 border border-neutral-700/80 text-xs text-neutral-300">
               <ShieldCheck className="w-3.5 h-3.5 text-orange-400 shrink-0" aria-hidden="true" />
-              <span>Motores usados com procedência, nota fiscal e garantia.</span>
+              <span>Motores usados com procedência, nota fiscal e garantia. Disponibilidade confirmada no atendimento.</span>
             </div>
 
             {/* Primary Action */}
@@ -67,10 +67,10 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToForm }) => {
               </a>
             </div>
 
-            {/* Aviso de estoque discreto e visível */}
+            {/* Aviso de disponibilidade discreto e visível */}
             <p className="mt-4 text-xs text-neutral-400 leading-relaxed max-w-lg flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-orange-500 shrink-0" aria-hidden="true"></span>
-              <span>Disponibilidade sujeita ao estoque no momento da consulta.</span>
+              <span>Disponibilidade consultada pela nossa equipe no momento do atendimento.</span>
             </p>
 
           </div>

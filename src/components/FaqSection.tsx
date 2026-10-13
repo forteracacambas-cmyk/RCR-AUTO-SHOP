@@ -20,7 +20,7 @@ export const FaqSection: React.FC = () => {
     {
       question: 'A disponibilidade é garantida?',
       answer:
-        'Não. O estoque pode mudar e a disponibilidade deve ser confirmada no momento do atendimento.',
+        'Não. As opções disponíveis podem mudar e a disponibilidade deve ser confirmada pela nossa equipe no momento do atendimento.',
     },
     {
       question: 'Como recebo as informações do motor?',
@@ -50,7 +50,7 @@ export const FaqSection: React.FC = () => {
     {
       question: 'Vocês possuem todos os motores disponíveis?',
       answer:
-        'Não necessariamente. O estoque é dinâmico e a disponibilidade é verificada conforme os dados do veículo e o momento da consulta.',
+        'Não necessariamente. A disponibilidade pode variar e é consultada pela RCR conforme os dados do veículo informados no momento do atendimento.',
     },
   ];
 

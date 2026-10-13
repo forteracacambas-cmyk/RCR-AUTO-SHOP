@@ -67,7 +67,7 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
             <div className="p-4 rounded-xl bg-orange-50 border border-orange-200 text-xs text-orange-950 leading-relaxed flex items-start gap-2.5">
               <ShieldCheck className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
               <span>
-                Comercializamos exclusivamente motores usados com procedência, nota fiscal e garantia. Disponibilidade sujeita ao estoque no momento da consulta.
+                Comercializamos exclusivamente motores usados com procedência, nota fiscal e garantia. Disponibilidade confirmada no atendimento.
               </span>
             </div>
 
