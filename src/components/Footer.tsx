@@ -128,7 +128,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   className="font-medium text-orange-400 hover:text-orange-300 inline-flex items-center gap-1 mt-0.5"
                 >
                   <MessageSquare className="w-3 h-3" />
-                  <span>(47) 9185-8962</span>
+                  <span>{businessConfig.whatsappFormatted}</span>
                 </a>
               </div>
               <div className="pt-2 border-t border-neutral-800">

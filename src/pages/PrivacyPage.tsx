@@ -1,6 +1,7 @@
 import React from 'react';
 import { ShieldCheck, Lock, Server, ExternalLink } from 'lucide-react';
 import { PageRoute } from '../types';
+import { businessConfig } from '../config/businessConfig';
 
 interface PrivacyPageProps {
   onNavigate?: (route: PageRoute) => void;
@@ -81,7 +82,7 @@ export const PrivacyPage: React.FC<PrivacyPageProps> = () => {
             </p>
           </div>
 
-          <p>Para solicitar informações sobre privacidade ou exercer seus direitos, fale com a RCR AUTO SHOP pelo <a href="https://wa.me/554791858962" target="_blank" rel="noopener noreferrer" className="text-orange-700 underline">WhatsApp comercial: (47) 9185-8962</a>.</p>
+          <p>Para solicitar informações sobre privacidade ou exercer seus direitos, fale com a RCR AUTO SHOP pelo <a href={`https://wa.me/${businessConfig.whatsappNumber}`} target="_blank" rel="noopener noreferrer" className="text-orange-700 underline">WhatsApp comercial: {businessConfig.whatsappFormatted}</a>.</p>
           {/* 4. Controlador dos Dados */}
           <div className="pt-6 border-t border-neutral-200 text-xs sm:text-sm text-neutral-600">
             <span className="font-semibold text-neutral-900 block mb-1">Identificação da Empresa:</span>

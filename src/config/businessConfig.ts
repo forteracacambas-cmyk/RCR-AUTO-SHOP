@@ -19,6 +19,7 @@ export interface BusinessConfig {
     avisoDeslocamento: string;
   };
   whatsappNumber: string; // DDI + DDD + número
+  whatsappFormatted: string; // Formato legível para exibição
 }
 
 export const businessConfig: BusinessConfig = {
@@ -37,5 +38,6 @@ export const businessConfig: BusinessConfig = {
     textoCompleto: "Rua Heloisa Pamplona, 720, apto 71, Edifício Positano, Fundação, São Caetano do Sul - SP, CEP 09520-310",
     avisoDeslocamento: "Endereço cadastral. Consulte a equipe antes de se deslocar para atendimento ou retirada.",
   },
-  whatsappNumber: "554791858962", // Número confirmado pelo cliente
+  whatsappNumber: "553198825498", // Número comercial confirmado pelo cliente
+  whatsappFormatted: "(31) 9882-5498",
 };

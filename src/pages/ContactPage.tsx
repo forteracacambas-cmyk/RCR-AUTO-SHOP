@@ -58,7 +58,7 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
                   className="inline-flex items-center justify-center gap-2 w-full rounded-lg bg-emerald-600 hover:bg-emerald-500 py-3.5 px-4 font-semibold text-white transition-colors shadow-sm"
                 >
                   <MessageSquare className="w-4 h-4" />
-                  <span>Falar no WhatsApp · (47) 9185-8962</span>
+                  <span>Falar no WhatsApp · {businessConfig.whatsappFormatted}</span>
                 </a>
               </div>
             </div>
@@ -89,7 +89,7 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
                 </div>
                 <div>
                   <span className="font-semibold text-neutral-900 block">Atendimento:</span>
-                  <span>(47) 9185-8962 (WhatsApp Comercial)</span>
+                  <span>{businessConfig.whatsappFormatted} (WhatsApp Comercial)</span>
                 </div>
                 <div className="pt-2 border-t border-neutral-200">
                   <span className="font-semibold text-neutral-900 block flex items-center gap-1">
