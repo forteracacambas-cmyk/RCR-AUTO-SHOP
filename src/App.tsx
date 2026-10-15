@@ -20,7 +20,6 @@ import { ContactPage } from './pages/ContactPage';
 import { CommercialConditionsPage } from './pages/CommercialConditionsPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { PageRoute } from './types';
-import { TrackingConsent } from './adsTracking';
 
 export default function App() {
   const [currentRoute, setCurrentRoute] = useState<PageRoute>(() => {
@@ -120,8 +119,6 @@ export default function App() {
 
       {/* Complete Footer with Cadastral Data & Navigation */}
       <Footer onNavigate={navigateTo} />
-
-      <TrackingConsent />
 
       {/* Mobile Sticky CTA Cap <= 15% Viewport */}
       {currentRoute === '/' && (

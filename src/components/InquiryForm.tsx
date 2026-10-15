@@ -1,4 +1,3 @@
-import { measurementAllowed, trackWhatsApp } from '../adsTracking';
 import React, { useState } from 'react';
 import { MessageSquare, ArrowUpRight, Zap, CheckCircle2 } from 'lucide-react';
 import { businessConfig } from '../config/businessConfig';
@@ -43,12 +42,9 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({ className = '' }) => {
       return;
     }
     setError('');
-
-    if (measurementAllowed()) {
-      event.preventDefault();
-      const url = `https://wa.me/${businessConfig.whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
-      trackWhatsApp(() => window.location.assign(url));
-    }
+    event.preventDefault();
+    const url = `https://wa.me/${businessConfig.whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
+    window.location.assign(url);
   };
 
   const fieldClass = 'w-full min-h-12 rounded-xl border-2 border-neutral-700 bg-neutral-950 px-4 py-3 text-sm sm:text-base font-medium text-white shadow-sm transition focus:border-orange-500 focus:outline-none focus:ring-4 focus:ring-orange-500/20 placeholder:font-normal placeholder:text-neutral-500';

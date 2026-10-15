@@ -67,7 +67,7 @@ export const PrivacyPage: React.FC<PrivacyPageProps> = () => {
               Como em qualquer serviço na web, os servidores de hospedagem e infraestrutura de rede podem registrar automaticamente informações técnicas de conexão, como endereço IP, data e hora da solicitação, tipo de navegador e páginas acessadas, com a finalidade exclusiva de segurança da infraestrutura, prevenção contra abusos e diagnóstico de estabilidade.
             </p>
             <p className="mt-2">
-              Mediante sua escolha em “Aceitar medição”, utilizamos a tag do Google Ads para medir a abertura do WhatsApp pelos botões do site e atribuir contatos aos anúncios. A medição pode utilizar cookies, identificadores de clique e informações técnicas de acesso. Os campos motor, ano e veículo não são enviados ao Google pelo evento de conversão. Não utilizamos personalização de anúncios nem conversões otimizadas com dados pessoais. A tag somente é carregada após clicar em “Aceitar medição”. A preferência é armazenada no navegador. Para desfazer essa escolha, remova os dados armazenados deste site nas configurações do navegador e não aceite a medição na próxima visita. Cookies já criados também podem ser removidos nas configurações do navegador.
+              Informações de navegação e estatísticas podem ser processadas para análise técnica de desempenho e usabilidade do site, sem identificação direta de dados sensíveis ou pessoais do visitante. O gerenciamento de cookies e dados de navegação pode ser realizado diretamente nas configurações do seu navegador a qualquer momento.
             </p>
           </div>
 
