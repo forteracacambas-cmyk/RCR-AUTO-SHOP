@@ -34,8 +34,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onScrollToForm
         
         <div className="space-y-10">
           <figure className="overflow-hidden rounded-xl border border-neutral-200 bg-neutral-950">
-            <img src={engineDetail} alt="Ilustração de bloco de motor com pistões" width="1400" height="933" loading="lazy" className="w-full max-h-96 object-cover" />
-            <figcaption className="px-5 py-3 text-xs text-neutral-400">Imagem ilustrativa de componentes de um motor.</figcaption>
+            <img src={engineDetail} alt="Bloco de motor automotivo com pistões" width="1400" height="933" loading="lazy" className="w-full max-h-96 object-cover" />
           </figure>
           
           {/* Apresentação comercial simples */}

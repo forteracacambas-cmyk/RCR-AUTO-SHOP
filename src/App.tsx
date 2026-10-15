@@ -8,7 +8,6 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { ThreeSteps } from './components/ThreeSteps';
 import { EngineGuidance } from './components/EngineGuidance';
-import { InquiryForm } from './components/InquiryForm';
 import { StockAndCondition } from './components/StockAndCondition';
 import { TransparencySection } from './components/TransparencySection';
 import { CommercialOrientation } from './components/CommercialOrientation';
@@ -80,7 +79,6 @@ export default function App() {
         {currentRoute === '/' && (
           <>
             <Hero onScrollToForm={scrollToForm} />
-            <InquiryForm />
             <ThreeSteps onScrollToForm={scrollToForm} />
 
             {/* Nova Seção: Disponibilidade e Condição dos Motores */}
