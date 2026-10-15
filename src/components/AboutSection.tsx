@@ -64,7 +64,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onScrollToForm }) =>
           <div>
             <figure className="overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50">
               <img src="https://eggxmquyojonumybuvir.supabase.co/storage/v1/object/public/rcr-site-media/rcr-fachada-simulacao.webp" alt="Simulação de fachada laranja com a identidade visual da RCR Auto Shop" width="1200" height="900" loading="lazy" className="w-full h-auto" />
-              <figcaption className="p-4 text-xs text-neutral-500 leading-relaxed">Simulação de fachada para apresentação da marca. Para atendimento presencial ou retirada, confirme o local com a equipe antes de se deslocar.</figcaption>
+              
             </figure>
           </div>
         </div>
