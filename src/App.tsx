@@ -6,11 +6,11 @@
 import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { ThreeSteps } from './components/ThreeSteps';
-import { EngineGuidance } from './components/EngineGuidance';
-import { StockAndCondition } from './components/StockAndCondition';
+import { EngineShowcase } from './components/EngineShowcase';
+import { ConsultSection } from './components/ConsultSection';
+import { PreparationVideo } from './components/PreparationVideo';
+import { WhatsAppCallout } from './components/WhatsAppCallout';
 import { TransparencySection } from './components/TransparencySection';
-import { CommercialOrientation } from './components/CommercialOrientation';
 import { AboutSection } from './components/AboutSection';
 import { FaqSection } from './components/FaqSection';
 import { Footer } from './components/Footer';
@@ -78,25 +78,18 @@ export default function App() {
         {currentRoute === '/' && (
           <>
             <Hero onScrollToForm={scrollToForm} />
-            <ThreeSteps onScrollToForm={scrollToForm} />
-
-            {/* Nova Seção: Disponibilidade e Condição dos Motores */}
-            <StockAndCondition />
-
-            {/* Nova Seção: Transparência na Consulta */}
+            <EngineShowcase />
+            <PreparationVideo />
+            <div id="como-funciona" className="scroll-mt-20"><ConsultSection /></div>
             <TransparencySection />
-
-            {/* Como Identificar os Dados do Motor */}
-            <EngineGuidance />
-
-            {/* Como Conduzimos Cada Atendimento */}
-            <CommercialOrientation />
+            <WhatsAppCallout />
 
             {/* Seção Sobre a Empresa na Landing Page */}
             <AboutSection onScrollToForm={scrollToForm} />
 
             {/* FAQ com as 9 perguntas */}
             <FaqSection />
+            <WhatsAppCallout final />
           </>
         )}
 
@@ -127,3 +120,5 @@ export default function App() {
     </div>
   );
 }
+
+

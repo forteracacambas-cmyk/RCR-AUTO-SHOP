@@ -35,10 +35,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           {/* Column 1: Brand */}
           <div className="md:col-span-4 flex flex-col justify-between">
             <div>
-              <div className="text-lg font-bold text-white tracking-tight flex items-center gap-2">
-                <span>RCR</span>
-                <span className="text-orange-500 font-semibold text-base">AUTO SHOP</span>
-              </div>
+              <img src="https://eggxmquyojonumybuvir.supabase.co/storage/v1/object/public/rcr-site-media/rcr-logo-laranja.webp" alt="RCR Auto Shop — Motores Automotivos" width="800" height="300" loading="lazy" className="w-56 h-auto bg-white rounded-lg p-3" />
               
               <p className="mt-3 text-xs sm:text-sm text-neutral-400 leading-relaxed max-w-sm">
                 Consulta e comercialização exclusiva de motores automotivos usados, com procedência, nota fiscal e garantia. Disponibilidade confirmada no atendimento.
@@ -164,3 +161,5 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
     </footer>
   );
 };
+
+

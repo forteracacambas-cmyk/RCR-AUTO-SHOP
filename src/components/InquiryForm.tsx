@@ -69,13 +69,13 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({ className = '' }) => {
         <div className="border-b border-neutral-800 pb-4">
           <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-orange-500/15 border border-orange-500/30 text-orange-400 text-xs font-bold uppercase tracking-wider mb-2">
             <Zap className="w-3.5 h-3.5" aria-hidden="true" />
-            <span>Fácil e simples · Menos de 2 minutos</span>
+            <span>Prepare sua consulta</span>
           </div>
           <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight uppercase">
-            Consulta de disponibilidade do seu motor
+            Qual motor você procura?
           </h2>
           <p className="mt-1 text-xs sm:text-sm text-neutral-300">
-            Fácil e simples, em menos de 2 minutos. Confira! Preencha os campos abaixo:
+            Preencha os três campos para enviar sua consulta pelo WhatsApp.
           </p>
         </div>
 
@@ -180,3 +180,5 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({ className = '' }) => {
     </div>
   );
 };
+
+

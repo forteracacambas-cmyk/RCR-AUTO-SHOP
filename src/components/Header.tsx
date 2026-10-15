@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { PageRoute } from '../types';
+import { businessConfig } from '../config/businessConfig';
 
 interface HeaderProps {
   currentPage: PageRoute;
@@ -71,21 +72,19 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <>
       <header className="sticky top-0 z-40 w-full bg-neutral-950/95 backdrop-blur-md border-b border-neutral-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between gap-4">
           {/* Zone 1: Brand Wordmark */}
           <button
             onClick={() => handleNavClick('/')}
             className="flex items-center gap-2 group text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded p-1 shrink-0"
             aria-label="RCR AUTO SHOP - Página Inicial"
           >
-            <span className="font-extrabold text-xl tracking-tight text-white group-hover:text-orange-400 transition-colors">
-              RCR <span className="text-orange-500 font-semibold tracking-normal text-lg">AUTO SHOP</span>
-            </span>
+            <img src="https://eggxmquyojonumybuvir.supabase.co/storage/v1/object/public/rcr-site-media/rcr-logo-laranja.webp" alt="RCR Auto Shop — Motores Automotivos" width="800" height="300" className="w-40 sm:w-44 h-auto rounded-lg bg-white px-2 py-1" />
           </button>
 
           {/* Zone 2: Navigation Links */}
           <nav
-            className="hidden md:flex items-center gap-6 text-sm font-medium text-neutral-300"
+            className="hidden lg:flex items-center gap-4 text-sm font-medium text-neutral-300"
             aria-label="Navegação Principal"
           >
             <button
@@ -97,10 +96,10 @@ export const Header: React.FC<HeaderProps> = ({
               Início
             </button>
             <button
-              onClick={() => handleAnchorClick('como-funciona')}
+              onClick={() => handleAnchorClick('mostruario')}
               className="hover:text-white transition-colors cursor-pointer py-1 whitespace-nowrap shrink-0 border-b-2 border-transparent text-neutral-300"
             >
-              Como funciona
+              Ver motores
             </button>
             <button
               onClick={() => handleAnchorClick('sobre')}
@@ -129,18 +128,19 @@ export const Header: React.FC<HeaderProps> = ({
           </nav>
 
           {/* Zone 3: Single Primary Action */}
-          <div className="hidden md:flex items-center gap-4 shrink-0">
-            <button
-              onClick={handleConsultClick}
-              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white bg-orange-600 hover:bg-orange-500 active:bg-orange-700 rounded-md transition-colors shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 cursor-pointer whitespace-nowrap shrink-0"
+          <div className="hidden lg:flex items-center gap-4 shrink-0">
+            <a
+              href={`https://wa.me/${businessConfig.whatsappNumber}?text=${encodeURIComponent('Olá, RCR AUTO SHOP! Gostaria de consultar um motor para meu carro.')}`}
+              target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white bg-emerald-700 hover:bg-emerald-800 rounded-md transition-colors shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 cursor-pointer whitespace-nowrap shrink-0"
             >
-              <span>CONSULTAR DISPONIBILIDADE</span>
+              <span>FALAR NO WHATSAPP</span>
               <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Toggle Button */}
-          <div className="flex md:hidden items-center">
+          <div className="flex lg:hidden items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 text-neutral-400 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-md"
@@ -160,7 +160,7 @@ export const Header: React.FC<HeaderProps> = ({
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm md:hidden flex justify-end"
+          className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm lg:hidden flex justify-end"
           role="dialog"
           aria-modal="true"
           aria-label="Menu móvel"
@@ -247,3 +247,5 @@ export const Header: React.FC<HeaderProps> = ({
     </>
   );
 };
+
+

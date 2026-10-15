@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, MessageSquare } from 'lucide-react';
+import { businessConfig } from '../config/businessConfig';
 
 interface MobileStickyCtaProps {
   onScrollToForm: () => void;
@@ -42,15 +43,17 @@ export const MobileStickyCta: React.FC<MobileStickyCtaProps> = ({ onScrollToForm
           <span className="text-[10px] uppercase font-mono text-neutral-400 leading-tight">RCR AUTO SHOP</span>
           <span className="text-xs font-bold text-white leading-tight">Motores Usados</span>
         </div>
-        <button
-          onClick={onScrollToForm}
-          className="inline-flex items-center gap-1.5 py-2 px-3.5 bg-orange-600 hover:bg-orange-500 active:bg-orange-700 text-white rounded-md text-xs font-bold uppercase tracking-wider transition-colors shadow-sm cursor-pointer whitespace-nowrap"
+        <a
+          href={`https://wa.me/${businessConfig.whatsappNumber}?text=${encodeURIComponent('Olá! Gostaria de consultar um motor para meu carro.')}`}
+          target="_blank" rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 py-2 px-3.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-md text-xs font-bold uppercase tracking-wider transition-colors shadow-sm cursor-pointer whitespace-nowrap"
         >
           <MessageSquare className="w-3.5 h-3.5" aria-hidden="true" />
-          <span>CONSULTAR</span>
+          <span>WHATSAPP</span>
           <ArrowRight className="w-3 h-3" aria-hidden="true" />
-        </button>
+        </a>
       </div>
     </div>
   );
 };
+
