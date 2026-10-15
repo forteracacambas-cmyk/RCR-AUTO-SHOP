@@ -35,16 +35,18 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({ className = '' }) => {
     'Podem me enviar fotos, valor e condições caso haja uma opção compatível disponível?'
   ].join('\n');
 
-  const submit = (event: React.FormEvent) => {
-    if (!engine || !year || !vehicle.trim()) {
+  const isValid = Boolean(engine && year && vehicle.trim());
+
+  const whatsappUrl = `https://wa.me/${businessConfig.whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
+
+  const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (!isValid) {
       event.preventDefault();
       setError('Por favor, preencha todos os campos obrigatórios (Motor, Ano e Veículo) para consultar.');
       return;
     }
     setError('');
-    event.preventDefault();
-    const url = `https://wa.me/${businessConfig.whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
-    window.location.assign(url);
+    // Quando válidos, a navegação nativa do link ocorre normalmente para wa.me, sem preventDefault
   };
 
   const fieldClass = 'w-full min-h-12 rounded-xl border-2 border-neutral-700 bg-neutral-950 px-4 py-3 text-sm sm:text-base font-medium text-white shadow-sm transition focus:border-orange-500 focus:outline-none focus:ring-4 focus:ring-orange-500/20 placeholder:font-normal placeholder:text-neutral-500';
@@ -52,9 +54,12 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({ className = '' }) => {
   return (
     <div id="formulario-consulta" className={`scroll-mt-24 ${className}`}>
       <form 
-        action={`https://wa.me/${businessConfig.whatsappNumber.replace(/\D/g, '')}`} 
-        method="get" 
-        onSubmit={submit} 
+        onSubmit={(e) => {
+          e.preventDefault();
+          if (!isValid) {
+            setError('Por favor, preencha todos os campos obrigatórios (Motor, Ano e Veículo) para consultar.');
+          }
+        }} 
         noValidate 
         className="rounded-2xl sm:rounded-3xl border border-neutral-700/80 border-t-4 border-t-orange-500 bg-[#161A22] p-5 sm:p-7 shadow-2xl shadow-black/50 space-y-4 sm:space-y-5"
       >
@@ -146,15 +151,18 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({ className = '' }) => {
           </p>
         )}
 
-        {/* Submit button */}
-        <button 
-          type="submit" 
-          className="flex min-h-14 sm:min-h-16 w-full items-center justify-center gap-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 px-4 py-3.5 text-base sm:text-lg font-bold text-white shadow-xl shadow-emerald-950/40 transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-400 cursor-pointer uppercase tracking-wide"
+        {/* Ação CONSULTAR NO WHATSAPP como link real */}
+        <a 
+          href={isValid ? whatsappUrl : '#'}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={handleLinkClick}
+          className="flex min-h-14 sm:min-h-16 w-full items-center justify-center gap-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 px-4 py-3.5 text-base sm:text-lg font-bold text-white shadow-xl shadow-emerald-950/40 transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-400 cursor-pointer uppercase tracking-wide no-underline"
         >
           <MessageSquare size={22} aria-hidden="true" />
           <span>CONSULTAR NO WHATSAPP</span>
           <ArrowUpRight size={20} aria-hidden="true" />
-        </button>
+        </a>
 
         {/* Aviso claro sobre consulta e disponibilidade */}
         <div className="rounded-lg bg-neutral-950/60 border border-neutral-800/80 p-3 text-xs text-neutral-300 leading-relaxed flex items-start gap-2">
