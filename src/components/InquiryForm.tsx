@@ -131,7 +131,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({ className = '' }) => {
               <span>Qual é o seu carro? (Marca e Modelo) *</span>
             </span>
             <span className="mt-1 block text-xs font-normal text-neutral-300">
-              Digite o modelo do carro (Exemplo: Gol, Palio, Onix, Corolla, Celta, Hilux, etc.)
+              Digite o modelo e motorização do veículo
             </span>
           </label>
           <input 
@@ -139,7 +139,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({ className = '' }) => {
             maxLength={180} 
             value={vehicle} 
             onChange={e => { setVehicle(e.target.value); setError(''); }} 
-            placeholder="Exemplo: VW Gol 1.6, Fiat Palio Fire, GM Onix, Corolla..." 
+            placeholder="Exemplo: modelo, ano e motorização..." 
             className={fieldClass} 
             required 
           />
