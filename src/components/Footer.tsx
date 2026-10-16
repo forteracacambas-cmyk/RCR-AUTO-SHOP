@@ -38,7 +38,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <img src="https://eggxmquyojonumybuvir.supabase.co/storage/v1/object/public/rcr-site-media/rcr-logo-laranja.webp" alt="RCR Auto Shop — Motores Automotivos" width="800" height="300" loading="lazy" className="w-56 h-auto bg-white rounded-lg p-3" />
               
               <p className="mt-3 text-xs sm:text-sm text-neutral-400 leading-relaxed max-w-sm">
-                Consulta e comercialização exclusiva de motores automotivos usados, com procedência, nota fiscal e garantia. Disponibilidade confirmada no atendimento.
+                Consulta e comercialização exclusiva de motores automotivos seminovos, com procedência, nota fiscal e garantia. Disponibilidade confirmada no atendimento.
               </p>
             </div>
           </div>
@@ -128,18 +128,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   <span>{businessConfig.whatsappFormatted}</span>
                 </a>
               </div>
-              <div className="pt-2 border-t border-neutral-800">
-                <span className="text-neutral-500 block flex items-center gap-1">
-                  <MapPin className="w-3 h-3 text-neutral-500" />
-                  <span>Endereço Cadastral:</span>
-                </span>
-                <span className="text-neutral-300 block">
-                  {businessConfig.enderecoCadastral.textoCompleto}
-                </span>
-                <span className="text-neutral-400 block mt-1 text-[11px]">
-                  {businessConfig.enderecoCadastral.avisoDeslocamento}
-                </span>
-              </div>
+              
             </div>
           </div>
 
@@ -153,7 +142,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div className="flex items-center gap-3 text-neutral-400">
             <span>RCR AUTO SHOP</span>
             <span aria-hidden="true">·</span>
-            <span>Motores Automotivos Usados</span>
+            <span>Motores Automotivos Seminovos</span>
           </div>
         </div>
 

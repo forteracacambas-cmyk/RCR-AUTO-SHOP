@@ -13,7 +13,7 @@ export function EngineShowcase() {
   return (
     <section id="mostruario" aria-labelledby="mostruario-titulo" className="bg-neutral-50 py-14 sm:py-20 scroll-mt-24 border-b border-neutral-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-xs font-bold tracking-widest uppercase text-orange-600">Mostruário de motores usados</p>
+        <p className="text-xs font-bold tracking-widest uppercase text-orange-600">Mostruário de motores seminovos</p>
         <h2 id="mostruario-titulo" className="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight">Veja de perto. Consulte para o seu carro.</h2>
         <p className="mt-4 max-w-2xl text-neutral-600 leading-relaxed">Conheça alguns modelos de motores. Fale com a equipe para confirmar a disponibilidade, a aplicação e os itens que acompanham cada unidade.</p>
 
@@ -33,7 +33,7 @@ export function EngineShowcase() {
               </div>
 
               <div className="p-5 flex flex-col flex-1">
-                <p className="text-xs font-semibold text-orange-700 uppercase tracking-wide">Motor usado · Sob consulta</p>
+                <p className="text-xs font-semibold text-orange-700 uppercase tracking-wide">Motor seminovo · Sob consulta</p>
                 <h3 className="mt-2 text-xl font-bold leading-tight">{item.name} {item.engine}</h3>
                 <p className="mt-2 text-sm text-neutral-600">Motorização {item.engine} <span aria-hidden="true">·</span> Ano {item.year}</p>
                 <p className="mt-3 mb-5 text-xs text-neutral-500 leading-relaxed">Confirme código do motor, compatibilidade e condição da unidade no atendimento.</p>

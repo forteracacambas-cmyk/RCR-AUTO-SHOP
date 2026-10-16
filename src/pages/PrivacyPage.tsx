@@ -86,7 +86,7 @@ export const PrivacyPage: React.FC<PrivacyPageProps> = () => {
           {/* 4. Controlador dos Dados */}
           <div className="pt-6 border-t border-neutral-200 text-xs sm:text-sm text-neutral-600">
             <span className="font-semibold text-neutral-900 block mb-1">Identificação da Empresa:</span>
-            RCR AUTO SHOP LTDA · CNPJ 69.493.842/0001-29 · Rua Heloisa Pamplona, 720, apto 71, Edifício Positano, Fundação, São Caetano do Sul - SP, CEP 09520-310.
+            RCR AUTO SHOP LTDA · CNPJ 69.493.842/0001-29.
           </div>
 
         </div>

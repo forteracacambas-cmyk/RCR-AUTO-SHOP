@@ -9,8 +9,8 @@ export const StockAndCondition: React.FC = () => {
       icon: RefreshCw,
     },
     {
-      title: 'SOMENTE MOTORES USADOS',
-      desc: 'Comercializamos exclusivamente motores usados, com procedência, nota fiscal e garantia. As características e a condição são informadas individualmente durante o atendimento.',
+      title: 'SOMENTE MOTORES SEMINOVOS',
+      desc: 'Comercializamos exclusivamente motores seminovos, com procedência, nota fiscal e garantia. As características e a condição são informadas individualmente durante o atendimento.',
       icon: ShieldCheck,
     },
     {
@@ -34,7 +34,7 @@ export const StockAndCondition: React.FC = () => {
             A disponibilidade dos motores pode variar. Informe os dados do veículo para nossa equipe consultar uma opção compatível antes da negociação.
           </p>
           <p className="mt-2 text-sm text-orange-400/90 font-medium">
-            Motores usados com procedência, nota fiscal e garantia. Disponibilidade confirmada no atendimento.
+            Motores seminovos com procedência, nota fiscal e garantia. Disponibilidade confirmada no atendimento.
           </p>
         </div>
 

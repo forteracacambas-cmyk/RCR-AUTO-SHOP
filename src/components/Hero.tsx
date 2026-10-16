@@ -9,7 +9,7 @@ export const Hero: React.FC<{ onScrollToForm: () => void }> = () => (
       <figure className="order-1 lg:order-2 w-full rounded-3xl overflow-hidden bg-white border border-neutral-200 shadow-lg shadow-neutral-900/5">
         <img
           src="https://eggxmquyojonumybuvir.supabase.co/storage/v1/object/public/rcr-site-media/motores-prateleiras.webp"
-          alt="Motores usados organizados em prateleiras e paletes"
+          alt="Motores seminovos organizados em prateleiras e paletes"
           width="720"
           height="540"
           fetchPriority="high"

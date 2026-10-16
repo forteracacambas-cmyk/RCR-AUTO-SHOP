@@ -30,7 +30,7 @@ export const FaqSection: React.FC = () => {
     {
       question: 'Qual é a condição do motor?',
       answer:
-        'A RCR AUTO SHOP comercializa exclusivamente motores usados, com procedência, nota fiscal e garantia. As características específicas da unidade disponível são informadas pela equipe durante o atendimento.',
+        'A RCR AUTO SHOP comercializa exclusivamente motores seminovos, com procedência, nota fiscal e garantia. As características específicas da unidade disponível são informadas pela equipe durante o atendimento.',
     },
     {
       question: 'Como funciona orçamento e entrega?',
@@ -38,9 +38,9 @@ export const FaqSection: React.FC = () => {
         'Valores, condições comerciais e possibilidade de envio são informados pela equipe após a consulta do veículo e da unidade disponível.',
     },
     {
-      question: 'Posso retirar no endereço da empresa?',
+      question: 'Como funciona o atendimento e a entrega?',
       answer:
-        'Nosso endereço em São Caetano do Sul é cadastral. Consulte a equipe antes de se deslocar para verificar se há possibilidade de atendimento presencial ou retirada da sua unidade.',
+        'O atendimento e a consulta são realizados online via WhatsApp. Consulte a equipe para verificar as opções de envio e entrega da sua unidade.',
     },
     {
       question: 'O motor possui garantia?',
@@ -73,7 +73,7 @@ export const FaqSection: React.FC = () => {
               Perguntas Frequentes
             </h2>
             <p className="mt-2 text-base text-neutral-600">
-              Tire suas dúvidas sobre consulta, motores usados, procedência, garantia e condições de atendimento.
+              Tire suas dúvidas sobre consulta, motores seminovos, procedência, garantia e condições de atendimento.
             </p>
           </div>
 

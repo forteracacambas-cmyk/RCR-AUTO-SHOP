@@ -9,8 +9,8 @@ export const TransparencySection: React.FC = () => {
       icon: CheckCircle,
     },
     {
-      title: 'Somente motores usados',
-      desc: 'Comercializamos exclusivamente motores usados, com procedência e características informadas no atendimento.',
+      title: 'Somente motores seminovos',
+      desc: 'Comercializamos exclusivamente motores seminovos, com procedência e características informadas no atendimento.',
       icon: ShieldCheck,
     },
     {

@@ -22,7 +22,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onScrollToForm }) =>
             </h2>
             
             <p className="mt-4 text-base text-neutral-700 leading-relaxed">
-              A <strong>RCR AUTO SHOP</strong> atua com atendimento especializado para consulta de motores automotivos. Comercializamos exclusivamente motores usados, com procedência, nota fiscal e garantia. Disponibilidade confirmada no atendimento.
+              A <strong>RCR AUTO SHOP</strong> atua com atendimento especializado para consulta de motores automotivos. Comercializamos exclusivamente motores seminovos, com procedência, nota fiscal e garantia. Disponibilidade confirmada no atendimento.
             </p>
             
             <p className="mt-3 text-base text-neutral-700 leading-relaxed">
@@ -42,11 +42,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onScrollToForm }) =>
                 <span className="text-neutral-500 block text-xs">CNPJ:</span>
                 <span className="font-mono text-neutral-900">{businessConfig.cnpj}</span>
               </div>
-              <div className="pt-2 border-t border-neutral-200">
-                <span className="text-neutral-500 block text-xs">Endereço Cadastral:</span>
-                <span className="text-neutral-800 leading-relaxed block">{businessConfig.enderecoCadastral.textoCompleto}</span>
-                <span className="text-neutral-500 block text-[11px] mt-0.5">{businessConfig.enderecoCadastral.avisoDeslocamento}</span>
-              </div>
+              
             </div>
 
             <div className="mt-8">

@@ -47,7 +47,7 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
                 Atendimento pelo WhatsApp
               </h2>
               <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed">
-                Informe o seu veículo para consultar disponibilidade, fotos e orçamento de motores usados com procedência, nota fiscal e garantia.
+                Informe o seu veículo para consultar disponibilidade, fotos e orçamento de motores seminovos com procedência, nota fiscal e garantia.
               </p>
               
               <div className="pt-2">
@@ -67,7 +67,7 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
             <div className="p-4 rounded-xl bg-orange-50 border border-orange-200 text-xs text-orange-950 leading-relaxed flex items-start gap-2.5">
               <ShieldCheck className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
               <span>
-                Comercializamos exclusivamente motores usados com procedência, nota fiscal e garantia. Disponibilidade confirmada no atendimento.
+                Comercializamos exclusivamente motores seminovos com procedência, nota fiscal e garantia. Disponibilidade confirmada no atendimento.
               </span>
             </div>
 
@@ -91,18 +91,7 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
                   <span className="font-semibold text-neutral-900 block">Atendimento:</span>
                   <span>{businessConfig.whatsappFormatted} (WhatsApp Comercial)</span>
                 </div>
-                <div className="pt-2 border-t border-neutral-200">
-                  <span className="font-semibold text-neutral-900 block flex items-center gap-1">
-                    <MapPin className="w-3.5 h-3.5 text-neutral-500" />
-                    <span>Endereço Cadastral:</span>
-                  </span>
-                  <span className="text-neutral-600 block leading-relaxed mt-0.5">
-                    {businessConfig.enderecoCadastral.textoCompleto}
-                  </span>
-                  <span className="text-neutral-500 block text-[11px] mt-1">
-                    {businessConfig.enderecoCadastral.avisoDeslocamento}
-                  </span>
-                </div>
+                
               </div>
             </div>
 

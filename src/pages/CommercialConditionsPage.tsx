@@ -24,7 +24,7 @@ export const CommercialConditionsPage: React.FC<CommercialConditionsPageProps> =
               Condições Comerciais
             </h1>
             <p className="mt-4 text-base sm:text-lg text-neutral-300 leading-relaxed">
-              Entenda como funcionam as consultas, o fornecimento exclusivo de motores usados, procedência, nota fiscal, garantia e envio.
+              Entenda como funcionam as consultas, o fornecimento exclusivo de motores seminovos, procedência, nota fiscal, garantia e envio.
             </p>
           </div>
         </div>
@@ -49,14 +49,14 @@ export const CommercialConditionsPage: React.FC<CommercialConditionsPageProps> =
             </p>
           </div>
 
-          {/* 2. Exclusivamente motores usados */}
+          {/* 2. Exclusivamente motores seminovos */}
           <div className="border-b border-neutral-200 pb-8">
             <h2 className="text-xl font-bold text-neutral-900 tracking-tight flex items-center gap-2 mb-3">
               <ShieldCheck className="w-5 h-5 text-orange-600" />
-              <span>2. Exclusivamente Motores Usados com Procedência</span>
+              <span>2. Exclusivamente Motores Seminovos com Procedência</span>
             </h2>
             <p className="text-neutral-700 leading-relaxed text-sm sm:text-base">
-              A RCR AUTO SHOP comercializa <strong>exclusivamente motores usados</strong>. Não ofertamos motores novos ou retificados/recondicionados.
+              A RCR AUTO SHOP comercializa <strong>exclusivamente motores seminovos</strong>. Não ofertamos motores novos ou retificados/recondicionados.
             </p>
             <p className="mt-2 text-neutral-700 leading-relaxed text-sm sm:text-base">
               Todas as unidades comercializadas possuem procedência e características específicas informadas individualmente durante o atendimento. Quando houver uma opção compatível para o veículo informado, compartilhamos as especificações e fotos para sua avaliação antes de qualquer fechamento.
@@ -70,7 +70,7 @@ export const CommercialConditionsPage: React.FC<CommercialConditionsPageProps> =
               <span>3. Nota Fiscal e Garantia Legal</span>
             </h2>
             <p className="text-neutral-700 leading-relaxed text-sm sm:text-base">
-              Todos os motores usados comercializados são fornecidos com emissão de nota fiscal e garantia, respeitando rigorosamente os direitos estabelecidos no Código de Defesa do Consumidor (CDC).
+              Todos os motores seminovos comercializados são fornecidos com emissão de nota fiscal e garantia, respeitando rigorosamente os direitos estabelecidos no Código de Defesa do Consumidor (CDC).
             </p>
             <p className="mt-2 text-neutral-700 leading-relaxed text-sm sm:text-base">
               O prazo, a cobertura e as condições aplicáveis à unidade específica serão informados pela equipe antes da conclusão da compra, garantindo clareza total ao consumidor.
@@ -87,7 +87,7 @@ export const CommercialConditionsPage: React.FC<CommercialConditionsPageProps> =
               As opções de envio e os prazos estimados de entrega para o seu endereço são combinados diretamente durante o atendimento, de acordo com a sua localização e a unidade consultada.
             </p>
             <p className="mt-2 text-neutral-700 leading-relaxed text-sm sm:text-base text-xs text-neutral-500">
-              Nosso endereço em São Caetano do Sul é cadastral. Consulte nossa equipe antes de se deslocar para verificar se há possibilidade de atendimento presencial ou retirada da sua unidade no local.
+              O atendimento é realizado via WhatsApp comercial. Consulte nossa equipe para confirmar condições de envio e entrega.
             </p>
           </div>
 

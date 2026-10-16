@@ -23,7 +23,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onScrollToForm
               Sobre a RCR AUTO SHOP
             </h1>
             <p className="mt-4 text-base sm:text-lg text-neutral-300 leading-relaxed">
-              Atendimento especializado para consulta de motores automotivos. Motores usados com procedência, nota fiscal e garantia.
+              Atendimento especializado para consulta de motores automotivos. Motores seminovos com procedência, nota fiscal e garantia.
             </p>
           </div>
         </div>
@@ -43,7 +43,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onScrollToForm
               Nossa Atuação
             </h2>
             <p className="text-neutral-700 leading-relaxed text-base">
-              A <strong>RCR AUTO SHOP</strong> atua com atendimento especializado para consulta de motores automotivos. Comercializamos motores usados com procedência, nota fiscal e garantia. Disponibilidade confirmada no atendimento.
+              A <strong>RCR AUTO SHOP</strong> atua com atendimento especializado para consulta de motores automotivos. Comercializamos motores seminovos com procedência, nota fiscal e garantia. Disponibilidade confirmada no atendimento.
             </p>
             <p className="mt-3 text-neutral-700 leading-relaxed text-base">
               O processo é realizado de acordo com as informações do veículo e a disponibilidade existente no momento do atendimento. Nosso objetivo é fornecer informações claras para que o cliente possa avaliar a opção encontrada antes da conclusão da negociação.
@@ -101,15 +101,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onScrollToForm
                 <span className="font-mono text-neutral-900 sm:col-span-2">{businessConfig.cnpj}</span>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 py-1.5">
-                <span className="font-medium text-neutral-500">Endereço Cadastral:</span>
-                <span className="text-neutral-900 sm:col-span-2 leading-relaxed">
-                  {businessConfig.enderecoCadastral.textoCompleto}
-                  <span className="block mt-1 text-xs text-neutral-500">
-                    {businessConfig.enderecoCadastral.avisoDeslocamento}
-                  </span>
-                </span>
-              </div>
+              
             </div>
           </div>
 

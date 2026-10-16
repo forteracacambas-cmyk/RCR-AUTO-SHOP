@@ -41,7 +41,7 @@ export const MobileStickyCta: React.FC<MobileStickyCtaProps> = ({ onScrollToForm
       <div className="max-w-md mx-auto flex items-center justify-between gap-3 px-1">
         <div className="flex flex-col text-left">
           <span className="text-[10px] uppercase font-mono text-neutral-400 leading-tight">RCR AUTO SHOP</span>
-          <span className="text-xs font-bold text-white leading-tight">Motores Usados</span>
+          <span className="text-xs font-bold text-white leading-tight">Motores Seminovos</span>
         </div>
         <a
           href={`https://wa.me/${businessConfig.whatsappNumber}?text=${encodeURIComponent('Olá! Gostaria de consultar um motor para meu carro.')}`}
