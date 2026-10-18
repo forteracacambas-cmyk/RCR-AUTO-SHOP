@@ -68,6 +68,12 @@ interface ContactPageProps {
 
 export const ContactPage: React.FC<ContactPageProps> = () => {
   const [horaAtual, setHoraAtual] = useState('');
+  
+  // Estados para simular a digitação e aparição sequencial
+  const [step, setStep] = useState<number>(0); 
+  // 0: digitando primeira mensagem
+  // 1: primeira mensagem revelada, digitando segunda
+  // 2: segunda mensagem revelada, botão liberado com animação
 
   useEffect(() => {
     const originalTitle = document.title;
@@ -88,7 +94,20 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
       agora.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })
     );
 
+    // Sequência de digitação:
+    // Passo 1: digita por 1.2s -> mostra mensagem 1
+    const timer1 = setTimeout(() => {
+      setStep(1);
+    }, 1200);
+
+    // Passo 2: após 1.4s digitando a segunda mensagem -> mostra mensagem 2 e botão pulsando
+    const timer2 = setTimeout(() => {
+      setStep(2);
+    }, 2800);
+
     return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
       document.title = originalTitle;
       if (metaDesc && originalDesc) {
         metaDesc.setAttribute('content', originalDesc);
@@ -150,7 +169,7 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
           </div>
         </div>
 
-        {/* 4. CHAT INTERATIVO COM A PERSONAGEM ATENDENTE */}
+        {/* 4. CHAT INTERATIVO COM A PERSONAGEM ATENDENTE E ANIMAÇÃO DE DIGITANDO */}
         <div className="w-full mt-5 rounded-2xl border border-neutral-200 bg-[#EFEAE2] p-3 sm:p-4 text-left shadow-inner">
           {/* Header do Chat / Atendente */}
           <div className="flex items-center gap-2.5 pb-2.5 border-b border-neutral-300/60">
@@ -166,45 +185,65 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
               <p className="text-xs font-bold text-neutral-900">{NOME_ATENDENTE}</p>
               <p className="text-[10px] text-emerald-700 font-medium flex items-center gap-1">
                 <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                Online agora para consulta
+                {step < 2 ? 'digitando...' : 'online agora'}
               </p>
             </div>
           </div>
 
-          {/* Balão 1 da Mensagem */}
-          <div className="mt-3 bg-white rounded-2xl rounded-tl-sm p-3 shadow-sm border border-neutral-200/80 text-xs text-neutral-800 leading-relaxed space-y-2">
-            <p className="font-semibold text-neutral-900">
-              Olá, seja bem-vindo à <strong>RCR AUTO SHOP MOTORES</strong>! 👋
-            </p>
-            <p>
-              Se você procura por motor de veículo, está no lugar certo! Trabalhamos com <strong>motores seminovos</strong>, com procedência, garantia e emissão de nota fiscal.
-            </p>
-            <div className="text-[9px] text-neutral-400 text-right font-mono">
-              {horaAtual || '09:30'} ✓✓
+          {/* Balão 1: Se ainda não carregou, mostra efeito de 3 pontinhos digitando */}
+          {step === 0 ? (
+            <div className="mt-3 inline-flex items-center gap-1.5 bg-white rounded-2xl rounded-tl-sm px-4 py-2.5 shadow-sm border border-neutral-200/80 animate-pulse">
+              <span className="w-2 h-2 rounded-full bg-neutral-400 animate-bounce [animation-delay:-0.3s]" />
+              <span className="w-2 h-2 rounded-full bg-neutral-400 animate-bounce [animation-delay:-0.15s]" />
+              <span className="w-2 h-2 rounded-full bg-neutral-400 animate-bounce" />
             </div>
-          </div>
+          ) : (
+            <div className="mt-3 bg-white rounded-2xl rounded-tl-sm p-3 shadow-sm border border-neutral-200/80 text-xs text-neutral-800 leading-relaxed space-y-2 transition-all duration-300">
+              <p className="font-semibold text-neutral-900">
+                Olá, bem-vindo à <strong>RCR AUTO SHOP MOTORES</strong>! 👋
+              </p>
+              <p>
+                Se você procura por motor de veículo está no lugar certo, trabalhamos com <strong>motores seminovos</strong>, com procedência, garantia e nota fiscal.
+              </p>
+              <div className="text-[9px] text-neutral-400 text-right font-mono">
+                {horaAtual || '09:30'} ✓✓
+              </div>
+            </div>
+          )}
 
-          {/* Balão 2 da Mensagem com a Chamada */}
-          <div className="mt-2 bg-[#DCF8C6] rounded-2xl rounded-tl-sm p-3 shadow-sm border border-emerald-200 text-xs text-neutral-900 leading-relaxed space-y-2">
-            <p className="font-medium">
-              Quer consultar <strong>disponibilidade e preço</strong>? Chame nossa equipe no WhatsApp! Estamos prontos para atender você agora mesmo.
-            </p>
-            <div className="text-[9px] text-neutral-500 text-right font-mono">
-              {horaAtual || '09:31'} ✓✓
+          {/* Balão 2: Mostra efeito digitando no step 1, e exibe o balão verde no step 2 */}
+          {step === 1 && (
+            <div className="mt-2.5 inline-flex items-center gap-1.5 bg-white rounded-2xl rounded-tl-sm px-4 py-2.5 shadow-sm border border-neutral-200/80 animate-pulse">
+              <span className="w-2 h-2 rounded-full bg-neutral-400 animate-bounce [animation-delay:-0.3s]" />
+              <span className="w-2 h-2 rounded-full bg-neutral-400 animate-bounce [animation-delay:-0.15s]" />
+              <span className="w-2 h-2 rounded-full bg-neutral-400 animate-bounce" />
             </div>
-          </div>
+          )}
+
+          {step >= 2 && (
+            <div className="mt-2.5 bg-[#DCF8C6] rounded-2xl rounded-tl-sm p-3 shadow-sm border border-emerald-200 text-xs text-neutral-900 leading-relaxed space-y-2 transition-all duration-300">
+              <p className="font-medium">
+                Quer consultar <strong>disponibilidade e preço</strong>? Chame a gente no WhatsApp, fale conosco, estamos prontos para atender e ajudar!
+              </p>
+              <div className="text-[9px] text-neutral-500 text-right font-mono">
+                {horaAtual || '09:31'} ✓✓
+              </div>
+            </div>
+          )}
         </div>
 
-        {/* 5. BOTÃO PRINCIPAL VERDE DO WHATSAPP LOGO ABAIXO DA MENSAGEM */}
-        <div className="w-full mt-4">
+        {/* 5. BOTÃO PRINCIPAL VERDE DO WHATSAPP COM ANIMAÇÃO PULSANTE */}
+        <div className="w-full mt-5 relative">
+          {/* Anel de pulso externo quando liberado */}
+          <span className="absolute -inset-1 rounded-2xl bg-[#25D366] opacity-75 blur-sm animate-ping pointer-events-none" />
           <a
             href={mainWhatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group w-full min-h-[58px] sm:min-h-[62px] flex items-center justify-center gap-2.5 rounded-2xl bg-[#25D366] hover:bg-[#20bd5a] active:scale-[0.99] text-white font-bold text-base sm:text-lg shadow-lg shadow-emerald-600/30 transition-all focus:outline-none focus-visible:ring-4 focus-visible:ring-emerald-400 no-underline cursor-pointer"
+            className="relative group w-full min-h-[58px] sm:min-h-[62px] flex items-center justify-center gap-2.5 rounded-2xl bg-[#25D366] hover:bg-[#20bd5a] active:scale-[0.98] text-white font-bold text-base sm:text-lg shadow-xl shadow-emerald-600/40 transition-all focus:outline-none focus-visible:ring-4 focus-visible:ring-emerald-400 no-underline cursor-pointer animate-[pulse_2s_ease-in-out_infinite]"
           >
             <svg
-              className="w-6 h-6 fill-current shrink-0 group-hover:scale-110 transition-transform"
+              className="w-6 h-6 fill-current shrink-0 group-hover:scale-110 transition-transform animate-bounce"
               viewBox="0 0 24 24"
               aria-hidden="true"
             >
