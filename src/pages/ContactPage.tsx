@@ -25,7 +25,7 @@ const FOTO_ATENDENTE_URL =
 const NOME_ATENDENTE = 'Juliana · Atendimento RCR';
 
 // 5. NOME DA LOJA
-const NOME_DA_LOJA = 'RCR Auto Shop';
+const NOME_DA_LOJA = 'RCR AUTO SHOP MOTORES';
 
 // 6. NÚMERO DO WHATSAPP (Apenas números com DDI + DDD)
 const NUMERO_WHATSAPP = businessConfig.whatsappNumber; // 553198825498
@@ -121,7 +121,7 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
   )}`;
 
   return (
-    <div className="min-h-screen bg-[#F0F2F5] text-neutral-800 flex flex-col items-center justify-start px-3 py-6 sm:py-10 selection:bg-emerald-600 selection:text-white">
+    <div className="min-h-screen w-full overflow-x-hidden bg-[#F0F2F5] text-neutral-800 flex flex-col items-center justify-start px-3 py-6 sm:py-10 selection:bg-emerald-600 selection:text-white">
       {/* Container Central LinkBio estilo Chat do WhatsApp */}
       <main className="w-full max-w-md bg-white rounded-3xl shadow-xl shadow-neutral-900/5 border border-neutral-200/80 p-4 sm:p-6 flex flex-col items-center text-center">
         
@@ -232,18 +232,16 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
           )}
         </div>
 
-        {/* 5. BOTÃO PRINCIPAL VERDE DO WHATSAPP COM ANIMAÇÃO PULSANTE */}
-        <div className="w-full mt-5 relative">
-          {/* Anel de pulso externo quando liberado */}
-          <span className="absolute -inset-1 rounded-2xl bg-[#25D366] opacity-75 blur-sm animate-ping pointer-events-none" />
+        {/* 5. BOTÃO PRINCIPAL VERDE DO WHATSAPP ELEGANTE E SEM EXPANSÃO LATERAL */}
+        <div className="w-full mt-5">
           <a
             href={mainWhatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative group w-full min-h-[58px] sm:min-h-[62px] flex items-center justify-center gap-2.5 rounded-2xl bg-[#25D366] hover:bg-[#20bd5a] active:scale-[0.98] text-white font-bold text-base sm:text-lg shadow-xl shadow-emerald-600/40 transition-all focus:outline-none focus-visible:ring-4 focus-visible:ring-emerald-400 no-underline cursor-pointer animate-[pulse_2s_ease-in-out_infinite]"
+            className="group w-full min-h-[58px] sm:min-h-[62px] flex items-center justify-center gap-3 rounded-2xl bg-[#25D366] hover:bg-[#20bd5a] active:scale-[0.98] text-white font-bold text-base sm:text-lg shadow-md hover:shadow-lg shadow-emerald-600/30 transition-all duration-200 focus:outline-none focus-visible:ring-4 focus-visible:ring-emerald-400 no-underline cursor-pointer"
           >
             <svg
-              className="w-6 h-6 fill-current shrink-0 group-hover:scale-110 transition-transform animate-bounce"
+              className="w-6 h-6 fill-current shrink-0 transition-transform duration-200 group-hover:scale-110"
               viewBox="0 0 24 24"
               aria-hidden="true"
             >

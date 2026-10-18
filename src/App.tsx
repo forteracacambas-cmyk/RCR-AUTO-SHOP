@@ -65,7 +65,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-neutral-50 text-neutral-900 selection:bg-orange-600 selection:text-white">
+    <div className="min-h-screen w-full overflow-x-hidden flex flex-col bg-neutral-50 text-neutral-900 selection:bg-orange-600 selection:text-white">
       {/* Persistent Header with Top Bar Contract */}
       {currentRoute !== "/contato" && (
         <Header
