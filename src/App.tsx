@@ -67,11 +67,13 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col bg-neutral-50 text-neutral-900 selection:bg-orange-600 selection:text-white">
       {/* Persistent Header with Top Bar Contract */}
-      <Header
-        currentPage={currentRoute}
-        onNavigate={navigateTo}
-        onScrollToForm={scrollToForm}
-      />
+      {currentRoute !== "/contato" && (
+        <Header
+          currentPage={currentRoute}
+          onNavigate={navigateTo}
+          onScrollToForm={scrollToForm}
+        />
+      )}
 
       {/* Main Content Area based on Current Route */}
       <main className="flex-1">
@@ -111,7 +113,9 @@ export default function App() {
       </main>
 
       {/* Complete Footer with Cadastral Data & Navigation */}
-      <Footer onNavigate={navigateTo} />
+      {currentRoute !== "/contato" && (
+        <Footer onNavigate={navigateTo} />
+      )}
 
       {/* Mobile Sticky CTA Cap <= 15% Viewport */}
       {currentRoute === '/' && (
