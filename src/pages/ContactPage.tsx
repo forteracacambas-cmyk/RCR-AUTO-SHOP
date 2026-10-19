@@ -150,9 +150,19 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
         <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight text-neutral-950">
           {NOME_DA_LOJA}
         </h1>
-        <p className="mt-1 text-xs sm:text-sm font-semibold text-orange-600">
-          Motores completos e peças automotivas.
-        </p>
+                {/* BADGE DE GRANDE DESTAQUE: MOTORES NOVOS E SEMINOVOS COM 12 MESES DE GARANTIA */}
+        <div className="w-full mt-3 p-3 rounded-2xl bg-gradient-to-r from-orange-500/15 via-emerald-500/15 to-orange-500/15 border-2 border-orange-500/40 shadow-sm flex flex-col items-center justify-center text-center gap-1">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-600 text-white font-extrabold text-xs uppercase tracking-wider shadow-sm">
+            <ShieldCheck className="w-4 h-4 shrink-0" />
+            <span>Garantia Total de 12 Meses</span>
+          </div>
+          <p className="text-sm sm:text-base font-extrabold text-neutral-900 mt-1">
+            MOTORES NOVOS E SEMINOVOS
+          </p>
+          <p className="text-[11px] sm:text-xs font-semibold text-neutral-600">
+            Com procedência garantida, nota fiscal e 1 ano de garantia para o seu veículo
+          </p>
+        </div>
 
         {/* 3. FOTO REAL DA LOJA / ESTOQUE DE MOTORES */}
         <div className="w-full mt-4 rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-100 shadow-sm">
@@ -165,7 +175,7 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
           />
           <div className="bg-neutral-50 px-3 py-1.5 text-[11px] text-neutral-600 font-medium border-t border-neutral-200 flex items-center justify-center gap-1.5">
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-            <span>Motores seminovos com procedência, garantia e nota fiscal</span>
+            <span>Motores novos e seminovos com garantia de 12 meses e nota fiscal</span>
           </div>
         </div>
 
@@ -203,7 +213,7 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
                 Olá, bem-vindo à <strong>RCR AUTO SHOP MOTORES</strong>! 👋
               </p>
               <p>
-                Se você procura por motor de veículo está no lugar certo, trabalhamos com <strong>motores seminovos</strong>, com procedência, garantia e nota fiscal.
+                Se você procura por motor de veículo está no lugar certo, trabalhamos com <strong>motores novos e seminovos</strong>, com procedência, <strong>garantia de 12 meses</strong> e nota fiscal.
               </p>
               <div className="text-[9px] text-neutral-400 text-right font-mono">
                 {horaAtual || '09:30'} ✓✓
@@ -323,7 +333,7 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
             CNPJ: {businessConfig.cnpj} · {businessConfig.razaoSocial}
           </p>
           <p className="text-[10px] text-neutral-400 mt-1">
-            Garantia legal e emissão de nota fiscal em todas as unidades.
+            Motores novos e seminovos com 12 meses de garantia e nota fiscal.
           </p>
         </div>
 
