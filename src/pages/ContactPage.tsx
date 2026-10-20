@@ -107,15 +107,17 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
       setStep(2);
     }, 2800);
 
-    // Após 10 segundos, anima o botão com carregamento e aciona o clique do link como clique real do usuário
+    // Após 5 segundos, anima o botão com o carregamento e redireciona diretamente na mesma janela para NUNCA ser bloqueado por pop-up
     const autoClickTimer = setTimeout(() => {
       setIsRedirecting(true);
       setTimeout(() => {
         if (buttonRef.current) {
           buttonRef.current.click();
         }
-      }, 800);
-    }, 10000);
+        // Fallback imediato na mesma aba (zero bloqueio de pop-up no mobile)
+        window.location.href = mainWhatsappUrl;
+      }, 700);
+    }, 5000);
 
     return () => {
       clearTimeout(timer1);
@@ -260,8 +262,6 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
           <a
             ref={buttonRef}
             href={mainWhatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
             className={"group w-full min-h-[58px] sm:min-h-[62px] flex items-center justify-center gap-3 rounded-2xl bg-[#25D366] hover:bg-[#20bd5a] active:scale-[0.98] text-white font-bold text-base sm:text-lg shadow-md hover:shadow-lg shadow-emerald-600/30 transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-emerald-400 no-underline cursor-pointer " + (isRedirecting ? "bg-[#1fa851]" : "")}
           >
             {isRedirecting ? (
