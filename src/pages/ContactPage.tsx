@@ -107,16 +107,51 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
       setStep(2);
     }, 2800);
 
-    // Após 5 segundos, anima o botão com o carregamento e redireciona diretamente na mesma janela para NUNCA ser bloqueado por pop-up
-    const autoClickTimer = setTimeout(() => {
+        // Função para registrar a conversão no Google Tag Manager / Google Ads e disparar o clique
+    const executeConversionAndRedirect = () => {
       setIsRedirecting(true);
-      setTimeout(() => {
+
+      try {
+        // 1. Dispara evento nativo de clique no elemento para ativar triggers de "Click URL" e "Just Links" do GTM
         if (buttonRef.current) {
-          buttonRef.current.click();
+          const clickEvt = new MouseEvent("click", {
+            bubbles: true,
+            cancelable: true,
+            view: window,
+          });
+          buttonRef.current.dispatchEvent(clickEvt);
         }
-        // Fallback imediato na mesma aba (zero bloqueio de pop-up no mobile)
-        window.location.href = mainWhatsappUrl;
-      }, 700);
+
+        // 2. Dispara evento direto no dataLayer do Google Tag Manager
+        if (typeof window !== "undefined") {
+          const w = window as any;
+          w.dataLayer = w.dataLayer || [];
+          w.dataLayer.push({
+            event: "conversion",
+            event_category: "engagement",
+            event_label: "whatsapp_contact_auto_redirect",
+            send_to: "google_ads",
+            value: 1,
+            link_url: mainWhatsappUrl,
+          });
+          w.dataLayer.push({
+            event: "whatsapp_click",
+            click_url: mainWhatsappUrl,
+          });
+        }
+      } catch (err) {
+        console.error("Conversion push error:", err);
+      }
+
+      // 3. Redirecionamento 100% seguro contra bloqueador de pop-up (navegação direta na mesma aba)
+      setTimeout(() => {
+        window.location.assign(mainWhatsappUrl);
+      }, 500);
+    };
+
+    // Após 5 segundos, aciona a conversão idêntica ao clique real do usuário
+    const autoClickTimer = setTimeout(() => {
+      executeConversionAndRedirect();
     }, 5000);
 
     return () => {
